@@ -2,6 +2,36 @@ class TeamComponent extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+      
+    }
+  
+    connectedCallback() {
+      // Método que se ejecuta cuando el componente se agrega al DOM
+      this.render();
+    }
+  
+    disconnectedCallback() {
+      // Método que se ejecuta cuando el componente se elimina del DOM
+    }
+  
+    attributeChangedCallback(name, oldValue, newValue) {
+      // Método que se ejecuta cuando se cambia un atributo del componente
+    }
+  
+    static get observedAttributes() {
+      return ["attribute1", "attribute2"];
+    }
+  
+    set attribute1(value) {
+      // Método que se ejecuta cuando se cambia el valor del atributo attribute1
+    }
+  
+    set attribute2(value) {
+      // Método que se ejecuta cuando se cambia el valor del atributo attribute2
+    }
+  
+    render() {
+      // Método que genera el código HTML del componente
       this.shadowRoot.innerHTML = `
         <style>
             .team {
@@ -162,34 +192,6 @@ class TeamComponent extends HTMLElement {
                 </div>
             </div>
       `;
-    }
-  
-    connectedCallback() {
-      // Método que se ejecuta cuando el componente se agrega al DOM
-    }
-  
-    disconnectedCallback() {
-      // Método que se ejecuta cuando el componente se elimina del DOM
-    }
-  
-    attributeChangedCallback(name, oldValue, newValue) {
-      // Método que se ejecuta cuando se cambia un atributo del componente
-    }
-  
-    static get observedAttributes() {
-      return ["attribute1", "attribute2"];
-    }
-  
-    set attribute1(value) {
-      // Método que se ejecuta cuando se cambia el valor del atributo attribute1
-    }
-  
-    set attribute2(value) {
-      // Método que se ejecuta cuando se cambia el valor del atributo attribute2
-    }
-  
-    render() {
-      // Método que genera el código HTML del componente
     }
   }
   

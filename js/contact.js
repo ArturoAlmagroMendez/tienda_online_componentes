@@ -2,6 +2,10 @@ class ContactComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        
+    }
+    render() {
+        // Método que genera el código HTML del componente
         this.shadowRoot.innerHTML = `
         <style>
             .contact {
@@ -14,7 +18,7 @@ class ContactComponent extends HTMLElement {
             }
             .contact .contact-map {
                 display:flex;
-                 
+                height: 100%;
                 align-items:center;
                 width:100%;    
             }
@@ -53,12 +57,11 @@ class ContactComponent extends HTMLElement {
                 position: relative;
                 z-index: -1;
                 width: 100%;
-                height: 80vh;
+                height: 100%;
             }
             .contact .contact-card-container {
                 width: 50%;
-                height: 60vh;
-                padding:20%;
+                height: 60%;
                 position: absolute;
                 perspective: 800px;
                 align-items:center;
@@ -295,6 +298,7 @@ class ContactComponent extends HTMLElement {
     }
 
     connectedCallback() {
+        this.render();
         const contactBtn = this.shadowRoot.querySelector('#contact-btn');
         const cardInner = this.shadowRoot.querySelector('.flip-card-inner');
 
@@ -330,9 +334,7 @@ class ContactComponent extends HTMLElement {
         // Método que se ejecuta cuando se cambia el valor del atributo attribute2
     }
 
-    render() {
-        // Método que genera el código HTML del componente
-    }
+    
 }
 
 customElements.define("contact-component", ContactComponent);

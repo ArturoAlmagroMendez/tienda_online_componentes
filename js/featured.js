@@ -2,7 +2,12 @@ class FeaturedComponent extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      this.shadowRoot.innerHTML = `
+      
+     
+    }
+    render() {
+        // Método que genera el código HTML del componente
+        this.shadowRoot.innerHTML = `
         <style>
             .featured {
                 height: 100vh;
@@ -69,27 +74,27 @@ class FeaturedComponent extends HTMLElement {
                                         .cls-1 {
                                             fill: #fff;
                                         }
-
+  
                                         .cls-2 {
                                             fill: #eee;
                                         }
-
+  
                                         .cls-3 {
                                             fill: #70cbf6;
                                         }
-
+  
                                         .cls-4 {
                                             fill: #ffc868;
                                         }
-
+  
                                         .cls-5 {
                                             opacity: 0.15;
                                         }
-
+  
                                         .cls-6 {
                                             fill: #171c1f;
                                         }
-
+  
                                         .cls-7 {
                                             opacity: 0.1;
                                         }
@@ -142,19 +147,19 @@ class FeaturedComponent extends HTMLElement {
                                         .cls-8 {
                                             fill: #fff;
                                         }
-
+  
                                         .cls-9 {
                                             fill: #43d490;
                                         }
-
+  
                                         .cls-10 {
                                             fill: #ff7575;
                                         }
-
+  
                                         .cls-11 {
                                             fill: #171c1f;
                                         }
-
+  
                                         .cls-12 {
                                             opacity: 0.1;
                                         }
@@ -206,19 +211,19 @@ class FeaturedComponent extends HTMLElement {
                                         .cls-13 {
                                             fill: #ffc868;
                                         }
-
+  
                                         .cls-14 {
                                             fill: #ff8f59;
                                         }
-
+  
                                         .cls-15 {
                                             fill: #fff;
                                         }
-
+  
                                         .cls-16 {
                                             fill: #171c1f;
                                         }
-
+  
                                         .cls-17 {
                                             opacity: 0.1;
                                         }
@@ -264,10 +269,12 @@ class FeaturedComponent extends HTMLElement {
                 </div>
             </div>
       `;
-    }
+        
+      }
   
     connectedCallback() {
       // Método que se ejecuta cuando el componente se agrega al DOM
+      this.render();
     }
   
     disconnectedCallback() {
@@ -290,9 +297,7 @@ class FeaturedComponent extends HTMLElement {
       // Método que se ejecuta cuando se cambia el valor del atributo attribute2
     }
   
-    render() {
-      // Método que genera el código HTML del componente
-    }
+    
   }
   
   customElements.define("featured-component", FeaturedComponent);

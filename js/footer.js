@@ -2,16 +2,42 @@ class FooterComponent extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+    }
+  
+    connectedCallback() {
+      // Método que se ejecuta cuando el componente se agrega al DOM
+      this.render();
+    }
+  
+    disconnectedCallback() {
+      // Método que se ejecuta cuando el componente se elimina del DOM
+    }
+  
+    attributeChangedCallback(name, oldValue, newValue) {
+      // Método que se ejecuta cuando se cambia un atributo del componente
+    }
+  
+    static get observedAttributes() {
+      return ["attribute1", "attribute2"];
+    }
+  
+    set attribute1(value) {
+      // Método que se ejecuta cuando se cambia el valor del atributo attribute1
+    }
+  
+    set attribute2(value) {
+      // Método que se ejecuta cuando se cambia el valor del atributo attribute2
+    }
+  
+    render() {
       this.shadowRoot.innerHTML = `
         <style>
             footer{
+                padding: 2rem 0;
                 width:100%;
-                height: 10%;
                 background-color: rgb(143, 217, 251);
-                position:absolute;
-                height:10vh;
-                
             }
+
             .footer-content {
                 display: flex;
                 justify-content: center;
@@ -114,34 +140,6 @@ class FooterComponent extends HTMLElement {
         </div>
     </footer>
       `;
-    }
-  
-    connectedCallback() {
-      // Método que se ejecuta cuando el componente se agrega al DOM
-    }
-  
-    disconnectedCallback() {
-      // Método que se ejecuta cuando el componente se elimina del DOM
-    }
-  
-    attributeChangedCallback(name, oldValue, newValue) {
-      // Método que se ejecuta cuando se cambia un atributo del componente
-    }
-  
-    static get observedAttributes() {
-      return ["attribute1", "attribute2"];
-    }
-  
-    set attribute1(value) {
-      // Método que se ejecuta cuando se cambia el valor del atributo attribute1
-    }
-  
-    set attribute2(value) {
-      // Método que se ejecuta cuando se cambia el valor del atributo attribute2
-    }
-  
-    render() {
-      // Método que genera el código HTML del componente
     }
   }
   

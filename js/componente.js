@@ -2,6 +2,9 @@ class MyComponent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+  }
+  render() {
+    // Método que genera el código HTML del componente
     this.shadowRoot.innerHTML = `
       <style>
         /* Estilos del componente */
@@ -11,10 +14,10 @@ class MyComponent extends HTMLElement {
       </div>
     `;
   }
-
   connectedCallback() {
     // Método que se ejecuta cuando el componente se agrega al DOM
   }
+
 
   disconnectedCallback() {
     // Método que se ejecuta cuando el componente se elimina del DOM
@@ -36,9 +39,7 @@ class MyComponent extends HTMLElement {
     // Método que se ejecuta cuando se cambia el valor del atributo attribute2
   }
 
-  render() {
-    // Método que genera el código HTML del componente
-  }
+
 }
 
 customElements.define("header-component", HeaderComponent);

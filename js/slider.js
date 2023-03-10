@@ -2,6 +2,15 @@ class SliderComponent extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+      
+    }
+  
+    connectedCallback() {
+      // Método que se ejecuta cuando el componente se agrega al DOM
+      this.render();
+    }
+    render() {
+      // Método que genera el código HTML del componente
       this.shadowRoot.innerHTML = `
         <style>
             .slider {
@@ -21,9 +30,11 @@ class SliderComponent extends HTMLElement {
             .slider .slider-img img {
                 width: 100%;
             }
-            .slider-title {
+            .slider .slider-title h1 {
+              font-size:4rem;
             }
-            .slider-text {
+            .slider-text p{
+              font-size:1.4rem;
             }
             .slider-button{
                 
@@ -65,10 +76,6 @@ class SliderComponent extends HTMLElement {
       `;
     }
   
-    connectedCallback() {
-      // Método que se ejecuta cuando el componente se agrega al DOM
-    }
-  
     disconnectedCallback() {
       // Método que se ejecuta cuando el componente se elimina del DOM
     }
@@ -89,9 +96,7 @@ class SliderComponent extends HTMLElement {
       // Método que se ejecuta cuando se cambia el valor del atributo attribute2
     }
   
-    render() {
-      // Método que genera el código HTML del componente
-    }
+    
   }
   
   customElements.define("slider-component", SliderComponent);
