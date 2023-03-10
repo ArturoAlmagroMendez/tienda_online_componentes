@@ -14,10 +14,41 @@ class ContactComponent extends HTMLElement {
             }
             .contact .contact-map {
                 display:flex;
-                justify-content:center;
+                 
                 align-items:center;
-                width:100%;
+                width:100%;    
             }
+            .contact .contact-map .contact-map-zoom{
+                position:absolute;
+                background-color:#fff;
+                width:14%;
+                height:15vh;
+                left:5%;
+                top:15%;
+                font-size:1.1rem;
+                display:flex;
+                text-align:center;
+                align-items:center;
+                border: 1px solid black;
+                padding: 10px;
+                box-shadow: 3px 5px 4px #888888;
+                gap:0.5rem;
+                color:#0084ff;
+                
+            }
+            .contact .contact-map .contact-map-zoom .contact-map-zoom-link{
+               position:absolute; 
+            }
+            .contact .contact-map .contact-map-zoom .contact-map-zoom-link small a{
+               background-color:#0084ff;
+               padding:0.3rem 0.3rem;
+               color:#fff;
+               font-weight:bold; 
+            }
+            .contact .contact-map .contact-map-zoom .contact-map-zoom-link small a:hover{
+                color:blue;
+            }
+
             .contact .contact-map iframe {
                 position: relative;
                 z-index: -1;
@@ -65,11 +96,12 @@ class ContactComponent extends HTMLElement {
               .flip-card-item{
                 display:flex;
                 flex-direction: column;
-                margin-left:1.5rem;
+                margin-left:3.5rem;
+                
               }
               .flip-card-title{
                 font-size:2.5rem;
-                margin-left:1.5rem;
+                margin-left:3.5rem;
               }
               .flip-card-item-text{
                 font-size:1.1rem;
@@ -161,8 +193,15 @@ class ContactComponent extends HTMLElement {
             <div class="contact-map">
                 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=2.8612089157104497%2C39.47529301752096%2C2.9075574874877934%2C39.504305605954634&amp;layer=mapnik"
-                    style="border: 1px solid black"></iframe><br /><small><a
-                        href="https://www.openstreetmap.org/#map=15/39.4898/2.8844">Ver mapa más grande</a></small>
+                    style="border: 1px solid black"></iframe>
+                    <div class="contact-map-zoom">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="36px" height="36px" viewBox="0 0 24 24" id="zoom-in" class="icon multi-color"><ellipse id="secondary-fill" cx="8.5" cy="10" rx="5.5" ry="6.84" style="fill: rgb(44, 169, 188); stroke-width: 2;"/><path id="primary-stroke" d="M17,10a7,7,0,1,1-7-7A7,7,0,0,1,17,10Zm4,11-6-6M10,7v6M7,10h6" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/></svg>
+                        <div class="contact-map-zoom-link>
+                            <small><a
+                                href="https://www.openstreetmap.org/#map=15/39.4898/2.8844">Ver mapa más grande</a>
+                            </small>
+                        </div>
+                    </div>        
             </div>
             <div class="contact-card-container">
                 <div class="flip-card">
@@ -174,16 +213,16 @@ class ContactComponent extends HTMLElement {
                             <div class="flip-card-item">
                                 <div class="flip-card-item-column">
                                     <div class="flip-card-item-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="_x32_" width="28px" height="28px" viewBox="0 0 512 512" xml:space="preserve">
-<style type="text/css">
-<![CDATA[
-	.st0{fill:#000000;}
-]]>
-</style>
-<g>
-	<path class="st0" d="M390.54,55.719C353.383,18.578,304.696,0,255.993,0c-48.688,0-97.391,18.578-134.547,55.719   c-59.219,59.219-74.641,149.563-36.094,218.875C129.586,354.109,255.993,512,255.993,512s126.422-157.891,170.656-237.406   C465.195,205.281,449.773,114.938,390.54,55.719z M255.993,305.844c-63.813,0-115.563-51.75-115.563-115.547   c0-63.859,51.75-115.609,115.563-115.609c63.828,0,115.578,51.75,115.578,115.609C371.571,254.094,319.821,305.844,255.993,305.844   z"/>
-</g>
-</svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="_x32_" width="28px" height="28px" viewBox="0 0 512 512" xml:space="preserve">
+                                        <style type="text/css">
+                                        <![CDATA[
+                                            .st0{fill:#000000;}
+                                        ]]>
+                                        </style>
+                                        <g>
+                                            <path class="st0" d="M390.54,55.719C353.383,18.578,304.696,0,255.993,0c-48.688,0-97.391,18.578-134.547,55.719   c-59.219,59.219-74.641,149.563-36.094,218.875C129.586,354.109,255.993,512,255.993,512s126.422-157.891,170.656-237.406   C465.195,205.281,449.773,114.938,390.54,55.719z M255.993,305.844c-63.813,0-115.563-51.75-115.563-115.547   c0-63.859,51.75-115.609,115.563-115.609c63.828,0,115.578,51.75,115.578,115.609C371.571,254.094,319.821,305.844,255.993,305.844   z"/>
+                                        </g>
+                                        </svg>
                                     </div>
                                     <div class="flip-card-item-text">
                                         <p>Calle ejemplo nº 3424</p>

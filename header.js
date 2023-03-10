@@ -17,6 +17,7 @@ class HeaderComponent extends HTMLElement {
             align-items: center;
             background-color: rgba(255, 255, 255, 0.5); /* 50% de opacidad */
             height: 10vh;
+            z-index:1;
           }
           
           .header-icon {
