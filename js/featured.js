@@ -10,19 +10,23 @@ class FeaturedComponent extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <style>
             .featured {
-                height: 100vh;
-                width: 100%;
-                background-color: rgb(0, 0, 0);
                 align-items: center;
+                background-color: rgb(0, 0, 0);
                 display: flex;
                 flex-direction: column;
+                height: 100vh;
                 justify-content: center;
+                width: 100%;
             }
-            .featured-title {
-                font-size:2rem;
+            .featured-title h2{
+                font-size:3rem;
+                margin:0;
+            }
+            .featured-subtitle p{
+                font-size:1.2rem;
             }
             .featured-subtitle{
-                font-size:1.2rem;
+                margin-bottom:5rem;
             }
             .featured .featured-content {
                 display: flex;
@@ -37,26 +41,25 @@ class FeaturedComponent extends HTMLElement {
                 flex-direction: column;
                 width:33%;
             }
-            .featured .featured-content .featured-item::before {
+            .featured .featured-content .featured-item:nth-child(n + 2)::before {
                 content: ">";
                 font-size: 4em;
+                position:absolute;
+                padding:2rem;
+                padding-right:30%;
             }
             .featured .featured-content .featured-item .featured-item-image {
                 height: 100px;
                 width: 100px;
             }
             .featured .featured-content .featured-item .featured-item-title {
-                font-weight: bold;
+                font-weight: 600;
                 font-size:1.5rem;
             }
             .featured .featured-content .featured-item .featured-item-text {
                 font-size:1.1rem;
             }
-            .featured .featured-content .featured-item .featured-item-text::after {
-                
-                content: ">";
-                font-size: 2rem;
-            }
+          
         </style>
         <div class="featured">
                 <div class="featured-title">

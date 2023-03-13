@@ -11,21 +11,20 @@ class DetailsComponent extends HTMLElement {
           <style>
             .details {
               display: flex;
-              justify-content: center;
-              width: 80%;
-              height: 100vh;
-              align-items: center;
-              gap:1rem;
               margin: 0 auto;
+              padding: 10% 0;
+              width: 80%;
             }
             .details .details-column {
               display: flex;
               flex-direction: column;
               gap: 0.5rem;
+              justify-content: space-between; 
+              width:33%;
             }
             .details .details-column .details-column-item {
               display: flex;
-              gap:0.5rem;
+              gap: 2rem;
             }
             .details .details-column .details-column-item .details-item-svg {
               height: 3rem;
@@ -35,20 +34,21 @@ class DetailsComponent extends HTMLElement {
               .details-column
               .details-column-item
               .details-item-description
-              .details-item-description-title {
-              font-size: 1.4rem;
+              .details-item-description-title h5 {
+              font-size: 2rem;
+              margin:0;
             }
             .details
               .details-column
               .details-column-item
               .details-item-description
-              .details-item-description-title {
+              .details-item-description-title h5{
               font-weight: bold;
               font-size: 1.8rem;
             }
             .details-column .details-image {
-              width: 400px;
-              height: 400px;
+              width:90%;
+              padding: 0 5%;
             }
             .details-column .details-image img {
               width: 100%;
@@ -97,7 +97,7 @@ class DetailsComponent extends HTMLElement {
                                   </svg>
                               </div>
                               <div class="details-item-description">
-                                  <div class="details-item-description-title">Sigue la mejor ruta</div>
+                                  <div class="details-item-description-title"><h5>Sigue la mejor ruta</h5></div>
                                   <div class="details-item-description-text">
                                       <p>Te guiaremos por la mejor ruta para ser un programador de éxito.</p>
                                   </div>
@@ -125,7 +125,7 @@ class DetailsComponent extends HTMLElement {
                                   </svg>
                               </div>
                               <div class="details-item-description">
-                                  <div class="details-item-description-title">Formación adaptada a tí</div>
+                                  <div class="details-item-description-title"><h5>Formación adaptada</h5></div>
                                   <div class="details-item-description-text">
                                       <p>Aprende a tu ritmo y con atención personalizada.</p>
                                   </div>
@@ -149,7 +149,7 @@ class DetailsComponent extends HTMLElement {
                                   </svg>
                               </div>
                               <div class="details-item-description">
-                                  <div class="details-item-description-title">Aprende diseño profesional</div>
+                                  <div class="details-item-description-title"><h5>Diseño profesional</h5></div>
                                   <div class="details-item-description-text">
                                       <p>Aprenderás a utilizar las últimas tecnologías de diseño web.</p>
                                   </div>
@@ -159,7 +159,7 @@ class DetailsComponent extends HTMLElement {
                       <div class="details-column">
                           <div class="details-image">
                               <picture>
-                                  <img src="./img/curso.webp" alt="" />
+                                  <img src="./img/portada-preview2.webp" alt="" />
                               </picture>
                           </div>
                       </div>
@@ -182,7 +182,7 @@ class DetailsComponent extends HTMLElement {
                                   </svg>
                               </div>
                               <div class="details-item-description">
-                                  <div class="details-item-description-title">Aprende a programar</div>
+                                  <div class="details-item-description-title"><h5>Aprende a programar</h5></div>
                                   <div class="details-item-description-text">
                                       <p>Utilizarás las tecnologías con más salida laboral.</p>
                                   </div>
@@ -212,7 +212,7 @@ class DetailsComponent extends HTMLElement {
                                   </svg>
                               </div>
                               <div class="details-item-description">
-                                  <div class="details-item-description-title">Cursos certificados</div>
+                                  <div class="details-item-description-title"><h5>Cursos certificados</h5></div>
                                   <div class="details-item-description-text">
                                       <p>Obtén una titulación al finalizar cualquiera de nuestros cursos.</p>
                                   </div>
@@ -256,7 +256,7 @@ class DetailsComponent extends HTMLElement {
                                   </svg>
                               </div>
                               <div class="details-item-description">
-                                  <div class="details-item-description-title">Encuentra trabajo</div>
+                                  <div class="details-item-description-title"><h5>Encuentra trabajo</h5></div>
                                   <div class="details-item-description-text">
                                       <p>Te ayudamos a encontrar trabajo en una de nuestras empresas afiliadas.</p>
                                   </div>

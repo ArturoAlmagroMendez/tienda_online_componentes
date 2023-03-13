@@ -11,24 +11,19 @@ class HeaderComponent extends HTMLElement {
       <style>
         /* Estilos del componente */
         header {
-          display: flex;
-          font-size: 1rem;
-          justify-content: center;
-          left: 0; /* Posicionamos la cabecera al lado izquierdo */
-          position: fixed; /* Hacemos que la cabecera tenga una posición fija */
-          top: 0; /* Posicionamos la cabecera pegada arriba */
-          text-transform: uppercase;
-          width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
           align-items: center;
           background-color: rgba(255, 255, 255, 0.5); /* 50% de opacidad */
+          display: flex;
           height: 10vh;
+          justify-content: space-around;
+          padding: 0 10%;
+          position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+          width: 80%; /* hacemos que la cabecera ocupe el ancho completo de la página */
           z-index:1;
         }
-        
         .header-icon {
-          padding-right: 100px;
-          width:10%%;
-          height:80%;
+          height:100%;
+          width:20%;
         }
         .header-icon img{
           height:100%;
@@ -37,38 +32,35 @@ class HeaderComponent extends HTMLElement {
         
         nav .nav-list ul {
           display: flex;
-          flex-wrap: wrap;
           gap: 1em;
-          justify-content: center;
           list-style:none;
+          margin: 0;
+          padding: 0;
         }
         
-        nav .nav-list ul li {
-          color: #090707;
-        }
         nav .nav-list ul li a {
           color: #000000;
+          font-size: 1rem;
           font-weight: bold;
           text-decoration:none;
+          text-transform: uppercase;
         }
         nav .nav-list ul li a:hover{
           color:#fff;
-          
         }
         .nav-button {
-          padding: 30px;
-          
+          width:20%;
         }
         .nav-button button {
           background-color: rgba(0, 247, 41, 0.7);
-          border-radius: 30px;
           border: none;
+          border-radius: 30px;
           color: #121212;
+          cursor: pointer;
           font-size: 1em;
           font-weight: bold;
+          padding: 0.6em 1em;
           text-transform: uppercase;
-          padding: 0.6em 0.6em;
-          cursor: pointer;
         }
         .nav-button button:hover {
           background-color: #121212;

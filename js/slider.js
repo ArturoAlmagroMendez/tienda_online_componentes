@@ -17,11 +17,11 @@ class SliderComponent extends HTMLElement {
                 align-items: center;
                 display: flex;
                 flex-direction: column;
+                gap:1em;
                 height: 100vh;
                 justify-content: center;
                 text-align: center;
                 width: 100%;
-                gap:1em;
             }
             .slider .slider-img {
                 position: absolute;
@@ -32,46 +32,41 @@ class SliderComponent extends HTMLElement {
             }
             .slider .slider-title h1 {
               font-size:4rem;
+              margin: 0;
             }
             .slider-text p{
               font-size:1.4rem;
             }
-            .slider-button{
-                
-            }
             .slider-button button {
                 background-color: rgba(0, 247, 41, 0.7);
-                border-radius: 30px;
                 border: none;
-                font-weight: bold;
-                padding: 1em 1em;
+                border-radius: 30px;
+                cursor: pointer; 
+                font-weight: 600;
                 height:95%;
-                cursor: pointer;
-                
+                padding: 1em 1.5em;    
             }
             .slider-button button:hover {
                 background-color: #949191;
                 color:#fff;
-                /*font-size:1.2em;*/
                 transition:.5s ease-out;
-                
             }
         </style>
         <div class="slider">
-                <div class="slider-img">
-                    <picture>
-                        <img src="./img/fondo5.webp" alt="" />
-                    </picture>
-                </div>
-                <div class="slider-title">
-                    <h1>The future of tech is here</h1>
-                </div>
-                <div class="slider-text">
-                    <p>¡This is the best time to learn web development!</p>
-                </div>
-                <div class="slider-button">
-                    <button>BUY WITH PAYPAL</button>
-                </div>
+          <div class="slider-img">
+              <picture>
+                  <img src="./img/fondo5.webp" alt="" />
+              </picture>
+          </div>
+          <div class="slider-title">
+              <h1>The future of tech is here</h1>
+          </div>
+          <div class="slider-text">
+              <p>¡This is the best time to learn web development!</p>
+          </div>
+          <div class="slider-button">
+              <button>BUY WITH PAYPAL</button>
+          </div>
         </div>
       `;
     }

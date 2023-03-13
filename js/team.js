@@ -35,69 +35,77 @@ class TeamComponent extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <style>
             .team {
+                background-color: rgb(26, 26, 26);
                 display: flex;
                 flex-direction: column;
+                height: 100vh;
                 justify-content: center;
                 text-align: center;
                 width: 100%;
-                height: 100vh;
-                background-color: rgb(26, 26, 26);
             }
-            .team .team-title{
-                font-size: 2.3rem;
+            .team .team-title h3{
+                font-size: 2.8rem;
+                margin:0;
             }
-            .team .team-text {
+            .team .team-text{
+                margin-bottom: 2rem;
+            }
+            .team .team-text p {
                 font-size:1.3rem;
-                margin-bottom: 1rem;
             }
             .team-content {
                 display: flex;
-                justify-content: center;
                 gap: 2em;
+                justify-content: center;
             }
             .team-content .team-item {
                 align-items: center;
                 display: flex;
                 flex-direction: column;
+                gap:.5rem;
             }
             .team-content .team-item .team-item-image {
-                height: 12rem;
-                width: 12rem;
+                height: 60%;                
                 position: relative;
+                width: 100%;
             }
             .team-content .team-item .team-item-image img{
-                width:100%;
                 height:100%;
+                width:100%;
+                border-radius:5px;
             }
             .team-content .team-item .team-social-networks {
-                height: 1.7rem;
-                width: 1.7em;
-                top:0.8em;
-                right:0.2em;
-                position: absolute;
+                align-items: center;
                 background-color: #fff;
-                z-index:1;
+                border-radius: 50px;
+                cursor:pointer;
                 display:flex;
                 flex-direction: column;
                 gap:.2em;
+                height: 1.7rem;
                 justify-content: center;
-                border-radius: 50px;
-                align-items: center;
                 padding:3px 3px;
-                cursor:pointer;
+                position: absolute;
+                right:0.2em;
+                top:0.8em;
+                width: 1.7em;
+                z-index:1;  
             }
             .stick {
-                width: 1.4rem;
+                background-color: #000000;
+                border-radius: 4px;
                 height: 0.3rem;
-                border-radius: 4px;  
-                background-color:  #000000;
                 position: relative;
+                width: 1.4rem;
             }
-            .team-content .team-item .team-item-title{
-                font-size: 2rem;
+            .team-content .team-item .team-item-title h5{
+                font-size: 1.4rem;
+                margin:0;
             }
-            .team-content .team-item .team-item-text-subtitle{
+            
+            .team-content .team-item .team-item-text-subtitle p{
                 font-size: 1.1rem;
+                margin:0;
             }
             .team-content .team-item .team-social-networks button{
                 width:100%;

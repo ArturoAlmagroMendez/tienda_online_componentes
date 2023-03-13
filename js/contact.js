@@ -60,11 +60,12 @@ class ContactComponent extends HTMLElement {
                 height: 100%;
             }
             .contact .contact-card-container {
-                width: 50%;
-                height: 60%;
+                width: 30%;
+                height: 40%;
                 position: absolute;
                 perspective: 800px;
                 align-items:center;
+                
             }
             .flip-card {
                 width: 100%;
@@ -95,16 +96,19 @@ class ContactComponent extends HTMLElement {
                 display:flex;
                 flex-direction:column;
                 align-items:flex-start;
+                padding:1rem 5%;
+                justify-content: space-between;
+                
               }
               .flip-card-item{
                 display:flex;
                 flex-direction: column;
-                margin-left:3.5rem;
+                
                 
               }
-              .flip-card-title{
+              .flip-card-title h5{
                 font-size:2.5rem;
-                margin-left:3.5rem;
+                margin:0;
               }
               .flip-card-item-text{
                 font-size:1.1rem;
@@ -118,7 +122,7 @@ class ContactComponent extends HTMLElement {
               }
               .flip-card-front-button{
                 width:80%;
-                padding:10%;
+                padding:0 10%;
                 
               }
               #contact-btn{
