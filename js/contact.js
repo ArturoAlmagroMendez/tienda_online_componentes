@@ -9,36 +9,35 @@ class ContactComponent extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <style>
             .contact {
-                height: 90vh;
-                width: 100%;
-                display: flex;
-                justify-content: center;
                 align-items: center;
+                display: flex;
+                height: 90vh;
+                justify-content: center;
                 position:relative;
+                width: 100%;
             }
             .contact .contact-map {
+                align-items:center;
                 display:flex;
                 height: 100%;
-                align-items:center;
                 width:100%;    
             }
             .contact .contact-map .contact-map-zoom{
-                position:absolute;
-                background-color:#fff;
-                width:14%;
-                height:15vh;
-                left:5%;
-                top:15%;
-                font-size:1.1rem;
-                display:flex;
-                text-align:center;
                 align-items:center;
+                background-color:#fff;
                 border: 1px solid black;
-                padding: 10px;
                 box-shadow: 3px 5px 4px #888888;
-                gap:0.5rem;
                 color:#0084ff;
-                
+                display:flex;
+                font-size:1.1rem;
+                gap:0.5rem;
+                height:15vh;
+                position:absolute;
+                left:5%;
+                padding: 10px;
+                text-align:center;
+                top:15%;
+                width:14%;
             }
             .contact .contact-map .contact-map-zoom .contact-map-zoom-link{
                position:absolute; 
@@ -60,8 +59,8 @@ class ContactComponent extends HTMLElement {
                 height: 100%;
             }
             .contact .contact-card-container {
-                width: 30%;
-                height: 40%;
+                width: 40%;
+                height: 50%;
                 position: absolute;
                 perspective: 800px;
                 align-items:center;
@@ -71,7 +70,6 @@ class ContactComponent extends HTMLElement {
                 width: 100%;
                 height: 100%;
                 perspective: 1000px;
-                
             }
               
             .flip-card-inner {
@@ -84,27 +82,25 @@ class ContactComponent extends HTMLElement {
             }
               
               .flip-card-front, .flip-card-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
                 backface-visibility: hidden;
+                height: 100%;
+                padding:5% 10%;
+                position: absolute;
+                width: 80%;
+                height:100%;
               }
               
               .flip-card-front {
+                align-items:flex-start;
                 background-color: #fff;
                 color: black;
                 display:flex;
                 flex-direction:column;
-                align-items:flex-start;
-                padding:1rem 5%;
                 justify-content: space-between;
-                
               }
               .flip-card-item{
                 display:flex;
                 flex-direction: column;
-                
-                
               }
               .flip-card-title h5{
                 font-size:2.5rem;
@@ -121,9 +117,7 @@ class ContactComponent extends HTMLElement {
                 align-items:center;   
               }
               .flip-card-front-button{
-                width:80%;
-                padding:0 10%;
-                
+                width:100%;
               }
               #contact-btn{
                 width:100%;
@@ -132,7 +126,7 @@ class ContactComponent extends HTMLElement {
                 border:none;
                 font-size:2rem;
                 color:#fff;
-                font-weight:bold;
+                font-weight:600;
                 text-transform:uppercase;
                 cursor:pointer;
               }
@@ -140,45 +134,69 @@ class ContactComponent extends HTMLElement {
                 background-color:black;
                 transition:.5s ease-out;
               }
-              
               .flip-card-back {
                 background-color:#0084ff; 
                 transform: rotateY(180deg);
               }
-              
               .flip-card-back form {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                gap:1rem;
-                width:100%;
+                justify-content: flex-end;
+                gap:4rem;
                 height:100%;
+                width:100%;
               }
               .flip-card-back form .flip-card-inputs{
                 display:flex;
-                gap:1rem;
-                justify-content:center;
-              }
-              .flip-card-back .form .flip-card-inputs .flip-card-name input {
-                margin-bottom: 1em;
-                background: none;
-                border: none;
-                border-bottom: 1px solid #fff;
-                color: #fff;
-                width:60%;
-              }
-            
-              .contact .flip-card .flip-card-inner .flip-card-back .flip-card-message{
-                width:60%;
-                padding:0 20%;
-
-              }
-              .contact .flip-card .flip-card-inner .flip-card-back .form textarea {
-                background: none;
-                color: #fff;
-                padding: 1.5em;
-                border: 1px solid #fff;
+                justify-content:space-between;
                 width:100%;
+              }
+              .flip-card-back form .flip-card-inputs .flip-card-name {
+                width:45%;
+              }
+              .flip-card-back form .flip-card-inputs .flip-card-email {
+                width:45%;
+              }
+              .flip-card-back form .flip-card-inputs input{
+                background: #fff;
+                border: none;
+                border-bottom: 1px solid #000;
+                border-radius:5px;
+                box-sizing: border-box;
+                color: #000;
+                font-size:1rem;
+                padding:.8rem;
+                width:100%;
+              }
+              .flip-card-back form .flip-card-inputs input::placeholder{
+                color:#000;
+                font-family: 'Poppins', sans-serif;
+                font-size:1.2rem;
+              }
+              .flip-card-back form .flip-card-inputs input::focus{
+                border:none;
+                border-bottom: 1px solid #fff;
+              }
+              .contact .flip-card .flip-card-inner .flip-card-back .flip-card-message{
+                height:40%;
+                width:100%;
+              }
+              .contact .flip-card .flip-card-inner .flip-card-back form textarea {
+                background: #fff;
+                border: 1px solid #000;
+                border-radius:5px;
+                color: #000;
+                font-size:1rem;
+                height:100%;
+                width:100%;
+              }
+              .contact .flip-card .flip-card-inner .flip-card-back form textarea::placeholder {
+                color:#000;
+                font-family: 'Poppins', sans-serif;
+                font-size:1.2rem;
+              }
+              .contact .flip-card .flip-card-inner .flip-card-back form textarea:focus {
+               
               }
               .contact .flip-card .flip-card-inner .flip-card-back .flip-card-submit{
                 width:100%;
@@ -186,9 +204,19 @@ class ContactComponent extends HTMLElement {
               }
               .contact .flip-card .flip-card-inner .flip-card-back .flip-card-submit button{
                 background-color: #fff;
-                color:blue;
-                border-radius:20px;
                 border:none;
+                color:#000;
+                cursor:pointer;
+                font-size:2rem;
+                font-weight:600;
+                text-transform:uppercase;
+                padding:1rem 1rem;
+                width:100%;
+              }
+              .contact .flip-card .flip-card-inner .flip-card-back .flip-card-submit button:hover{
+                background-color:#000;
+                color:#fff;
+                transition:.5s ease-out;
               }
               .flip-card-inner.flipped {
                 transform: rotateY(180deg); 

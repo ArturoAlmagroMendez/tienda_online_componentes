@@ -11,7 +11,7 @@ class FeaturedComponent extends HTMLElement {
         <style>
             .featured {
                 align-items: center;
-                background-color: rgb(0, 0, 0);
+                background-color: #fff;
                 display: flex;
                 flex-direction: column;
                 height: 100vh;

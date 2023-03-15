@@ -20,6 +20,7 @@ class HeaderComponent extends HTMLElement {
           position: fixed; /* Hacemos que la cabecera tenga una posición fija */
           width: 80%; /* hacemos que la cabecera ocupe el ancho completo de la página */
           z-index:1;
+          
         }
         .header-icon {
           height:100%;
@@ -46,7 +47,7 @@ class HeaderComponent extends HTMLElement {
           text-transform: uppercase;
         }
         nav .nav-list ul li a:hover{
-          color:#fff;
+          text-decoration:underline;
         }
         .nav-button {
           width:20%;

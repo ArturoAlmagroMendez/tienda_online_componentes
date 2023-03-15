@@ -159,7 +159,7 @@ class DetailsComponent extends HTMLElement {
                       <div class="details-column">
                           <div class="details-image">
                               <picture>
-                                  <img src="./img/portada-preview2.webp" alt="" />
+                                  <img src="./img/portada.webp" alt="" />
                               </picture>
                           </div>
                       </div>
