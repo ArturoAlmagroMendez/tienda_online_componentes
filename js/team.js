@@ -87,8 +87,8 @@ class TeamComponent extends HTMLElement {
                 justify-content: center;
                 padding:3px 3px;
                 position: absolute;
-                right:0.2em;
-                top:0.8em;
+                right:5%;
+                top:5%;
                 width: 1.7em;
                 z-index:1;  
             }
