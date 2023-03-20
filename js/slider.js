@@ -66,6 +66,7 @@ class SliderComponent extends HTMLElement {
             .slider-button button:hover {
                 background-color: #949191;
                 color:#fff;
+                transform:scale(1.2);
                 transition:.5s ease-out;
             }
         </style>
