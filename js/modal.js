@@ -12,24 +12,50 @@ class ModalComponent extends HTMLElement {
             .modal{
                 width:50%;
                 padding:10% 25%;   
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+                height: 100vh;
+            }
+            
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
             }
             .modal-container {
                 box-shadow:0 0 62px rgba(0,0,0,.3);
                 display:flex;
-                justify-content:center;
                 width:100%;
                 height:80vh;
                 border:none;
                 align-items:center;
+                border-radius:5px;
+                background-color:#fff;
             }
             .modal-slider{
-                width:50%;
-                height:100%;
-                background-color:grey;
+                width:70%;
+                height:100%;   
+            }
+            .modal-slider .modal-slider-image{
+                height:50%;
+            }
+            .modal-slider:hover{
+               
             }
             .modal-slider img{
                 width:100%;
                 height:100%;
+                cursor:pointer;
+            }
+            .modal-slider img:hover{
+                
             }
             .modal-content{
                 height:100%;
@@ -61,16 +87,24 @@ class ModalComponent extends HTMLElement {
             }
             .modal .modal-content .prices .new-price span{
                 font-weight:600;
-                font-size:2rem;
-
+                font-size:1.8rem;
+                
+            }
+            .modal .modal-content .prices .new-price:hover{
+                transform: scale(1.2);
+                transition:.3s ease-in-out;
             }
             .modal .modal-content .prices .offert-price span{
                 background-color:rgba(0, 247, 41, 0.7);
                 font-weight:600;
-                font-size:2rem;
+                font-size:1.8rem;
                 padding:0 .5rem;
                 border-radius:30px;
             }
+            .modal .modal-content .prices .offert-price:hover{
+                
+            }
+                
             .divider{
                 width:100%;
                 height:1px;
@@ -88,6 +122,7 @@ class ModalComponent extends HTMLElement {
                 padding:1rem 1.5rem;
                 border:none;
                 border-radius:30px;
+                cursor:pointer;
                 width:50%;
                 font-weight:600;
                 text-transform:uppercase;
@@ -96,7 +131,8 @@ class ModalComponent extends HTMLElement {
             .checkout button:hover{
                 color:#fff;
                background-color:#121212;
-               transition:.5s ease-in-out;
+               transform: scale(1.3);
+               transition:.3s ease-in-out;
             }
 
 
@@ -104,17 +140,24 @@ class ModalComponent extends HTMLElement {
         <div class="modal">
             <div class="modal-container">
                 <div class="modal-slider">
-                    <picture>
-                        <img src="/img/curso3.webp">
-                    </picture>
+                    <div class="modal-slider-image">
+                        <picture>
+                            <img src="/img/portada3.jpg">
+                        </picture>
+                    </div>
+                    <div class="modal-slider-image">
+                        <picture>
+                            <img src="/img/portada4.jpeg">
+                        </picture>
+                    </div>
                 </div>
                 <div class="modal-content">
                     <div class="title-subtitle">
                         <div class="modal-title">
-                            <h4>Watch limited Edition</h4>
+                            <h4>Curso de programación web desde cero</h4>
                         </div>
                         <div class="modal-subtitle">
-                            <p>model 234234</p>
+                            <p>Autor: Arturo Almagro</p>
                         </div>
                     </div>
                     <div class="prices">
@@ -131,12 +174,12 @@ class ModalComponent extends HTMLElement {
                     <div class="modal-description">
                         <div class="divider"></div>
                         <div class="modal-description-text">
-                            <p>8mm Silver Aluminum Case with Blue Sport Band. Its perfect fit for tracking fitness. 100% waterproof. Buy this limted edition sports edition.</p>
+                            <p>En este curso aprenderás todo lo necesario para ser desarrollador web desde nivel principiante hasta experto. Te enfrentarás a proyectos reales,aprenderás a utilizar las últimas tecnologías, SEO, diseño profesional, manejo de bases de datos, API REST y a crear tu propio negocio online paso a paso. </p>
                         </div>
                         <div class="divider"></div>
                     </div>
                     <div class="checkout">
-                        <button>Checkout</button>
+                        <button>Comprar</button>
                     </div>   
                 </div>
 

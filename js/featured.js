@@ -11,19 +11,34 @@ class FeaturedComponent extends HTMLElement {
         <style>
             .featured {
                 align-items: center;
-                background-color: #fff;
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+                height: 100vh;
                 display: flex;
                 flex-direction: column;
                 height: 100vh;
                 justify-content: center;
                 width: 100%;
             }
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
             .featured-title h2{
-                font-size:3rem;
+                font-size:5rem;
                 margin:0;
             }
             .featured-subtitle p{
-                font-size:1.2rem;
+                font-size:1.4rem;
+                font-weight:600;
             }
             .featured-subtitle{
                 margin-bottom:5rem;
@@ -33,20 +48,32 @@ class FeaturedComponent extends HTMLElement {
                 width: 80%;
                 text-align: center;
                 justify-content: space-evenly;
-                gap:1rem;
+                gap:4rem;
             }
             .featured .featured-content .featured-item {
                 align-items: center;
                 display: flex;
                 flex-direction: column;
                 width:33%;
+                border:none;
+                background-color:hsla(0, 0%, 100%, 0.78);
+                border-radius:10px;
+                padding:1.5rem;
+                box-shadow:0 0 62px rgba(0,0,0,.3);
+                cursor:pointer;
             }
+            .featured .featured-content .featured-item:hover{
+                transform: scale(1.1);
+                transition:.3s ease-in-out;
+            }
+
             .featured .featured-content .featured-item:nth-child(n + 2)::before {
                 content: ">";
                 font-size: 4em;
                 position:absolute;
                 padding:2rem;
-                padding-right:30%;
+                padding-right:29%;
+                padding-top:6rem;
             }
             .featured .featured-content .featured-item .featured-item-image {
                 height: 100px;

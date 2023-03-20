@@ -17,11 +17,12 @@ class SliderComponent extends HTMLElement {
                 align-items: center;
                 display: flex;
                 flex-direction: column;
-                gap:1em;
+                gap:3rem;
                 height: 100vh;
                 justify-content: center;
                 text-align: center;
                 width: 100%;
+                
             }
             .slider .slider-img {
                 position: absolute;
@@ -33,9 +34,25 @@ class SliderComponent extends HTMLElement {
             .slider .slider-title h1 {
               font-size:4rem;
               margin: 0;
+             
+              background:linear-gradient(
+                to right, 
+                hsl(98 100% 62%), 
+                hsl(204 100% 59%)
+                );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
             }
             .slider-text p{
               font-size:1.4rem;
+              font-weight:600;
+              background:linear-gradient(
+                to right, 
+                hsl(98 100% 62%), 
+                hsl(204 100% 59%)
+                );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
             }
             .slider-button button {
                 background-color: rgba(0, 247, 41, 0.7);

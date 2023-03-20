@@ -66,7 +66,8 @@ class HeaderComponent extends HTMLElement {
         .nav-button button:hover {
           background-color: #121212;
           color: #fff;
-          transition:.6s ease-out;
+          transform: scale(1.3);
+          transition:.4s ease-out;
         }
       </style>
       <header>
