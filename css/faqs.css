@@ -5,6 +5,8 @@
   padding: 10% 10%;
   text-align: start;
   width: 80%;
+  background: rgb(82, 102, 110);
+  background: linear-gradient(90deg, rgb(82, 102, 110) 0%, rgb(154, 156, 172) 51%, rgb(82, 102, 110) 100%);
 }
 
 .faqs .faqs-title {

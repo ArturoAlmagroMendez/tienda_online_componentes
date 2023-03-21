@@ -1,8 +1,7 @@
 .featured {
   align-items: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-color: #fff;
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,22 +10,28 @@
   width: 100%;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 .featured-title h2 {
-  font-size: 5rem;
+  font-size: 8rem;
   margin: 0;
+  color: rgba(225, 225, 225, 0.1);
+  background-image: url("https://s31.postimg.cc/yaze1agjv/abstract-background-canvas-249798.jpg");
+  background-repeat: repeat-x;
+  background-size: cover;
+  -webkit-background-clip: text;
+  animation: animate 40s linear infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
+@keyframes animate {
+  0% {
+    background-position: left 0px top 10px;
+  }
+  40% {
+    background-position: left 800px top 10px;
+  }
+}
 .featured-subtitle p {
   font-size: 1.4rem;
   font-weight: 600;
@@ -54,12 +59,11 @@
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 0 62px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+  transition: 0.3s linear;
 }
 
 .featured .featured-content .featured-item:hover {
   transform: scale(1.1);
-  transition: 0.3s ease-in-out;
 }
 
 .featured .featured-content .featured-item:nth-child(n+2)::before {

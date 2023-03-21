@@ -35,6 +35,8 @@ class FaqsComponent extends HTMLElement {
         ${css}
     </style>
       <div class="faqs">
+       
+
           <div class="faqs-title">
               <h4>Bootstrap 5 FAQ</h4>
           </div>
