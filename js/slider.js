@@ -9,6 +9,7 @@ class SliderComponent extends HTMLElement {
       // Método que se ejecuta cuando el componente se agrega al DOM
       this.render();
     }
+    
     render() {
       // Método que genera el código HTML del componente
       this.shadowRoot.innerHTML = `
