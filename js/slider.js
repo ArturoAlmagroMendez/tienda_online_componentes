@@ -2,56 +2,18 @@ class SliderComponent extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      
     }
-  
     connectedCallback() {
       // Método que se ejecuta cuando el componente se agrega al DOM
       this.render();
     }
-    
-    render() {
+    async render() {
+      const response = await fetch("./css/slider.css");
+      const css = await response.text();
       // Método que genera el código HTML del componente
       this.shadowRoot.innerHTML = `
         <style>
-            .slider {
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                gap:1em;
-                height: 100vh;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-            }
-            .slider .slider-img {
-                position: absolute;
-                z-index: -1;
-            }
-            .slider .slider-img img {
-                width: 100%;
-            }
-            .slider .slider-title h1 {
-              font-size:4rem;
-              margin: 0;
-            }
-            .slider-text p{
-              font-size:1.4rem;
-            }
-            .slider-button button {
-                background-color: rgba(0, 247, 41, 0.7);
-                border: none;
-                border-radius: 30px;
-                cursor: pointer; 
-                font-weight: 600;
-                height:95%;
-                padding: 1em 1.5em;    
-            }
-            .slider-button button:hover {
-                background-color: #949191;
-                color:#fff;
-                transition:.5s ease-out;
-            }
+          ${css}
         </style>
         <div class="slider">
           <div class="slider-img">

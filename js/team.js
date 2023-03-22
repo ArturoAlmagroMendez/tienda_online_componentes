@@ -35,7 +35,7 @@ class TeamComponent extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <style>
             .team {
-                background-color: rgb(26, 26, 26);
+                background-color: #fff);
                 display: flex;
                 flex-direction: column;
                 height: 100vh;
@@ -76,7 +76,8 @@ class TeamComponent extends HTMLElement {
             }
             .team-content .team-item .team-social-networks {
                 align-items: center;
-                background-color: #fff;
+                background-color:hsl(3, 0%, 0%);
+                opacity:.5;
                 border-radius: 50px;
                 cursor:pointer;
                 display:flex;
@@ -86,17 +87,17 @@ class TeamComponent extends HTMLElement {
                 justify-content: center;
                 padding:3px 3px;
                 position: absolute;
-                right:0.2em;
-                top:0.8em;
+                right:5%;
+                top:5%;
                 width: 1.7em;
                 z-index:1;  
             }
             .stick {
-                background-color: #000000;
+                background-color: #fff;
                 border-radius: 4px;
-                height: 0.3rem;
+                height: 0.2rem;
                 position: relative;
-                width: 1.4rem;
+                width: 1rem;
             }
             .team-content .team-item .team-item-title h5{
                 font-size: 1.4rem;

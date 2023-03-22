@@ -2,64 +2,14 @@ class FeaturedComponent extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      
-     
     }
-    render() {
+    async render() {
+        const response = await fetch("./css/featured.css");
+        const css = await response.text();
         // Método que genera el código HTML del componente
         this.shadowRoot.innerHTML = `
         <style>
-            .featured {
-                align-items: center;
-                background-color: rgb(0, 0, 0);
-                display: flex;
-                flex-direction: column;
-                height: 100vh;
-                justify-content: center;
-                width: 100%;
-            }
-            .featured-title h2{
-                font-size:3rem;
-                margin:0;
-            }
-            .featured-subtitle p{
-                font-size:1.2rem;
-            }
-            .featured-subtitle{
-                margin-bottom:5rem;
-            }
-            .featured .featured-content {
-                display: flex;
-                width: 80%;
-                text-align: center;
-                justify-content: space-evenly;
-                gap:1rem;
-            }
-            .featured .featured-content .featured-item {
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                width:33%;
-            }
-            .featured .featured-content .featured-item:nth-child(n + 2)::before {
-                content: ">";
-                font-size: 4em;
-                position:absolute;
-                padding:2rem;
-                padding-right:30%;
-            }
-            .featured .featured-content .featured-item .featured-item-image {
-                height: 100px;
-                width: 100px;
-            }
-            .featured .featured-content .featured-item .featured-item-title {
-                font-weight: 600;
-                font-size:1.5rem;
-            }
-            .featured .featured-content .featured-item .featured-item-text {
-                font-size:1.1rem;
-            }
-          
+            ${css}
         </style>
         <div class="featured">
                 <div class="featured-title">

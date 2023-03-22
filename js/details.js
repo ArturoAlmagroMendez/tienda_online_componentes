@@ -5,64 +5,13 @@ class DetailsComponent extends HTMLElement {
       
     }
     
-    render() {
+    async render() {
+        const response = await fetch("./css/details.css");
+        const css = await response.text();
         // Método que genera el código HTML del componente
         this.shadowRoot.innerHTML = `
           <style>
-            .details {
-              display: flex;
-              margin: 0 auto;
-              padding: 10% 0;
-              width: 80%;
-            }
-            .details .details-column {
-              display: flex;
-              flex-direction: column;
-              gap: 0.5rem;
-              justify-content: space-between; 
-              width:33%;
-            }
-            .details .details-column .details-column-item {
-              display: flex;
-              gap: 2rem;
-            }
-            .details .details-column .details-column-item .details-item-svg {
-              height: 3rem;
-              width: 3rem;
-            }
-            .details
-              .details-column
-              .details-column-item
-              .details-item-description
-              .details-item-description-title h5 {
-              font-size: 2rem;
-              margin:0;
-            }
-            .details
-              .details-column
-              .details-column-item
-              .details-item-description
-              .details-item-description-title h5{
-              font-weight: bold;
-              font-size: 1.8rem;
-            }
-            .details-column .details-image {
-              width:90%;
-              padding: 0 5%;
-            }
-            .details-column .details-image img {
-              width: 100%;
-              height: 100%;
-              border-radius: 20px;
-            }
-            .details
-              .details-column
-              .details-column-item
-              .details-item-description
-              .details-item-description-text{
-                  font-size:1.1rem;
-             }
-            
+            ${css}
           </style>
               <div class="details">
                       <div class="details-column">
@@ -159,7 +108,7 @@ class DetailsComponent extends HTMLElement {
                       <div class="details-column">
                           <div class="details-image">
                               <picture>
-                                  <img src="./img/portada-preview2.webp" alt="" />
+                                  <img src="./img/portada.webp" alt="" />
                               </picture>
                           </div>
                       </div>

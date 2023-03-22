@@ -1,0 +1,83 @@
+.featured {
+    align-items: center;
+    background-color: #fff;
+    background-size: 400% 400%;
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+.featured-title h2{
+    font-size:8rem;
+    margin:0;
+    color: rgba(225,225,225, .1);
+    background-image: url("https://s31.postimg.cc/yaze1agjv/abstract-background-canvas-249798.jpg");
+    background-repeat: repeat-x;
+    background-size: cover;
+    -webkit-background-clip:text;
+    animation: animate 40s linear infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+  @keyframes animate {
+    0%{
+      background-position: left 0px top 10px;
+    }
+    40%{
+      background-position: left 800px top 10px;
+  }
+}
+.featured-subtitle p{
+    font-size:1.4rem;
+    font-weight:600;
+}
+.featured-subtitle{
+    margin-bottom:5rem;
+}
+.featured .featured-content {
+    display: flex;
+    width: 80%;
+    text-align: center;
+    justify-content: space-evenly;
+    gap:4rem;
+}
+.featured .featured-content .featured-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width:33%;
+    border:none;
+    background-color:hsla(0, 0%, 100%, 0.78);
+    border-radius:10px;
+    padding:1.5rem;
+    box-shadow:0 0 62px rgba(0,0,0,.3);
+    transition:.3s linear;
+}
+.featured .featured-content .featured-item:hover{
+    transform: scale(1.1);
+}
+
+.featured .featured-content .featured-item:nth-child(n + 2)::before {
+    content: ">";
+    font-size: 4em;
+    position:absolute;
+    padding:2rem;
+    padding-right:29%;
+    padding-top:6rem;
+}
+.featured .featured-content .featured-item .featured-item-image {
+    height: 100px;
+    width: 100px;
+}
+.featured .featured-content .featured-item .featured-item-title {
+    font-weight: 600;
+    font-size:1.5rem;
+}
+.featured .featured-content .featured-item .featured-item-text {
+    font-size:1.1rem;
+}
