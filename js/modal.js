@@ -44,7 +44,7 @@ class ModalComponent extends HTMLElement {
                             <span>9.99€</span>
                         </div>
                         <div class="offert-price">
-                            <span>oferta 75%</span>
+                            <span>offer 75%</span>
                         </div>
                     </div>
                     <div class="modal-description">

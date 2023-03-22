@@ -29,53 +29,12 @@ class FooterComponent extends HTMLElement {
       // Método que se ejecuta cuando se cambia el valor del atributo attribute2
     }
   
-    render() {
+    async render() {
+      const response = await fetch("./css/app.css");
+      const css = await response.text();
       this.shadowRoot.innerHTML = `
         <style>
-            footer{
-                padding: 2rem 0;
-                width:100%;
-                background-color: rgb(143, 217, 251);
-            }
-
-            .footer-content {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-items:center;
-                
-            }
-            .footer-content .footer-menu ul{
-                list-style:none;
-                
-            }
-            .footer-content .footer-menu ul li a{
-                text-decoration:none;
-                cursor:pointer;
-            }
-            .footer-content .footer-menu ul li a:hover{
-                background-color:blue;
-            }
-
-            .footer-content .social-networks {
-                display: flex;
-                justify-content: center;
-                gap: 1em;
-                
-            }
-            .footer-content .social-networks img {
-                height: 2em;
-                width: 2em;
-                margin-bottom: 1em;
-            }
-            .footer-content .footer-menu ul {
-                text-align: center;
-                display: flex;
-                gap: 0.4em;
-                justify-content: center;
-                
-            }
-           
+          ${css}    
         </style>
         <footer>
         <div class="footer-content">

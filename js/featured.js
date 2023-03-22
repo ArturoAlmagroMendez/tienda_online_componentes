@@ -2,8 +2,6 @@ class FeaturedComponent extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      
-     
     }
     async render() {
         const response = await fetch("./css/featured.css");
