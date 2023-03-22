@@ -5,13 +5,137 @@ class ModalComponent extends HTMLElement {
       
      
     }
-    async render() {
-        const response = await fetch("./css/modal.css");
-        const css = await response.text();
+    render() {
         // Método que genera el código HTML del componente
         this.shadowRoot.innerHTML = `
         <style>
-            ${css}
+            .modal{
+                width:50%;
+                padding:10% 25%;   
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                background-size: 400% 400%;
+                animatin: gradient 15s ease infinite;
+                height: 100vh;
+            }
+            
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            .modal-container {
+                box-shadow:0 0 62px rgba(0,0,0,.3);
+                display:flex;
+                width:100%;
+                height:80vh;
+                border:none;
+                align-items:center;
+                border-radius:5px;
+                background-color:#fff;
+            }
+            .modal-slider{
+                width:70%;
+                height:100%;   
+            }
+            .modal-slider .modal-slider-image{
+                height:50%;
+            }
+            .modal-slider:hover{
+               
+            }
+            .modal-slider img{
+                width:100%;
+                height:100%;
+                cursor:pointer;
+            }
+            .modal-slider img:hover{
+                
+            }
+            .modal-content{
+                height:100%;
+                width:50%;
+                display:flex;
+                flex-direction:column;
+                padding:0 2rem;
+                justify-content:center;
+                gap:3rem;
+            }
+            .modal .modal-content .modal-title h4{
+                font-size:2.4rem;
+                margin:0;
+            }
+            .modal .modal-content .modal-subtitle p{
+                opacity:.5;
+                margin:0;
+            }
+            .modal .modal-content .prices {
+                display:flex;
+                gap:1rem;
+            }
+            .modal .modal-content .prices .old-price {
+                text-decoration:line-through;
+            }
+            .modal .modal-content .prices .old-price span {
+                color:red;
+                font-weight:600;
+            }
+            .modal .modal-content .prices .new-price span{
+                font-weight:600;
+                font-size:1.8rem;
+                
+            }
+            .modal .modal-content .prices .new-price:hover{
+                transform: scale(1.2);
+                transition:.3s ease-in-out;
+            }
+            .modal .modal-content .prices .offert-price span{
+                background-color:rgba(0, 247, 41, 0.7);
+                font-weight:600;
+                font-size:1.8rem;
+                padding:0 .5rem;
+                border-radius:30px;
+            }
+            .modal .modal-content .prices .offert-price:hover{
+                
+            }
+                
+            .divider{
+                width:100%;
+                height:1px;
+                background-color:grey;
+                opacity:.5;
+            }
+            .modal .modal-content .modal-description-text p{
+                font-size:1.2rem;
+            }
+            .checkout{
+                text-align:center;
+            }
+            .checkout button{
+                font-size:1rem;
+                padding:1rem 1.5rem;
+                border:none;
+                border-radius:30px;
+                cursor:pointer;
+                width:50%;
+                font-weight:600;
+                text-transform:uppercase;
+                background-color:rgba(0, 247, 41, 0.7);
+            }
+            .checkout button:hover{
+                color:#fff;
+               background-color:#121212;
+               transform: scale(1.3);
+               transition:.3s ease-in-out;
+            }
+
+
         </style>
         <div class="modal">
             <div class="modal-container">
@@ -44,7 +168,7 @@ class ModalComponent extends HTMLElement {
                             <span>9.99€</span>
                         </div>
                         <div class="offert-price">
-                            <span>offer 75%</span>
+                            <span>oferta 75%</span>
                         </div>
                     </div>
                     <div class="modal-description">
