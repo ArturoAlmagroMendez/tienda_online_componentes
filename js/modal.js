@@ -9,36 +9,23 @@ class ModalComponent extends HTMLElement {
         // Método que genera el código HTML del componente
         this.shadowRoot.innerHTML = `
         <style>
-            .modal{
-                width:50%;
-                padding:10% 25%;   
-                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-                background-size: 400% 400%;
-                animatin: gradient 15s ease infinite;
-                height: 100vh;
-            }
-            
-            @keyframes gradient {
-                0% {
-                    background-position: 0% 50%;
-                }
-                50% {
-                    background-position: 100% 50%;
-                }
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
+           
             .modal-container {
                 box-shadow:0 0 62px rgba(0,0,0,.3);
-                display:flex;
-                width:100%;
+                display:none;
+                margin:10% 10%;
+                width:80%;
                 height:80vh;
                 border:none;
                 align-items:center;
                 border-radius:5px;
                 background-color:#fff;
+                z-index:1001;
+                position:absolute;
             }
+            .modal-container.active {
+                display: flex;
+              }
             .modal-slider{
                 width:70%;
                 height:100%;   

@@ -89,16 +89,22 @@ class HeaderComponent extends HTMLElement {
           </div>
       </nav>
       <div class="nav-button">
-          <button>Buy it now</button>
+          <button id="checkout">Buy it now</button>
       </div>
     </header>
   `;
+  const modalContainer = document.querySelector(".modal-container");
+    const modalOpenButton = document.querySelector('#checkout');
+    modalOpenButton.addEventListener('click' , () =>{
+      modalContainer.classList.add('active');
+    });
 }
 
 connectedCallback() {
-  this.render();
+  this.render();  
+  
+ 
 }
-
 disconnectedCallback() {
   // Método que se ejecuta cuando el componente se elimina del DOM
 }
@@ -106,19 +112,6 @@ disconnectedCallback() {
 attributeChangedCallback(name, oldValue, newValue) {
   // Método que se ejecuta cuando se cambia un atributo del componente
 }
-
-static get observedAttributes() {
-  return ["attribute1", "attribute2"];
-}
-
-set attribute1(value) {
-  // Método que se ejecuta cuando se cambia el valor del atributo attribute1
-}
-
-set attribute2(value) {
-  // Método que se ejecuta cuando se cambia el valor del atributo attribute2
-}
-
   
 }
 
