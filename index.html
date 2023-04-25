@@ -8,21 +8,27 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="/src/index.js"></script>
 </head>
 <body>
-    <header-component></header-component>
-    <modal-component></modal-component>
+    <header>
+        <logo-component></logo-component>
+        <menu-component></menu-component>
+        <modal-button-component></modal-button-component>
+    </header>
     <main>
-        <slider-component></slider-component>
-        <one-page-scroll></one-page-scroll>
-        <featured-component></featured-component>
-        <faqs-component></faqs-component>
-        <details-component></details-component>
-        <team-component></team-component>
-        <contact-component></contact-component>  
+        <div class="home-page">
+            <slider-component></slider-component>
+            <featured-component></featured-component>
+            <details-component></details-component>
+            <team-component></team-component>
+            <faqs-component></faqs-component>
+            <contact-component></contact-component>
+            <modal-component></modal-component>
+        </div>   
     </main>
-    <footer-component></footer-component>
+    <footer>
+        <footer-component></footer-component>
+    </footer>
 </body>
 </html>

@@ -4,13 +4,13 @@ class MyComponent extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
   render() {
-    // Método que genera el código HTML del componente
+    // Método que genera el código HTML del componentea
     this.shadowRoot.innerHTML = `
       <style>
         /* Estilos del componente */
       </style>
       <div>
-        <!-- Contenido del componente -->
+        <!-- Contenido HTML del componente -->
       </div>
     `;
   }
