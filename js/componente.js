@@ -2,6 +2,7 @@ class MyComponent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    this.render();
   }
   render() {
     // Método que genera el código HTML del componentea
@@ -16,6 +17,7 @@ class MyComponent extends HTMLElement {
   }
   connectedCallback() {
     // Método que se ejecuta cuando el componente se agrega al DOM
+    const template = document.querySelector()
   }
 
 

@@ -90,3 +90,9 @@
   video {
     max-width: 100%;
   }
+
+.contact {
+  height: 90vh;
+  position: relative;
+  width: 100%;
+}
