@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script type="module" src="/src/admin/index.js"></script>
+</head>
+<body>
+    <header>
+    
+    </header>
+    <main>
+        <admin-component>
+            <header-component slot="header" logo="Logo" page-title="Mis Clientes"></header-component>
+            <dropdown-component slot="dropdown"></dropdown-component>
+            <aside-component slot="aside" data-values='[{"email": "correo1@example.com", "name": "Arturo Gerardo", "surname": "Almagro Méndez"}, {"email": "correo2@example.com", "name": "Juan", "surname": "Pérez"}, {"email": "correo3@example.com", "name": "María", "surname": "Gómez"}]'></aside-component>
+            <tabs-component slot="tabs" tabs='["Principal", "Imágenes" ,"Otros" ,"Opciones"]'></tabs-component>
+        </admin-component>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

@@ -17,7 +17,6 @@ class MyComponent extends HTMLElement {
   }
   connectedCallback() {
     // Método que se ejecuta cuando el componente se agrega al DOM
-    const template = document.querySelector()
   }
 
 
