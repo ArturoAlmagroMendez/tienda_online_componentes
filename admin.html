@@ -18,7 +18,13 @@
             <dropdown-component slot="dropdown"></dropdown-component>
             <aside-component slot="aside" data-values='[{"email": "correo1@example.com", "name": "Arturo Gerardo", "surname": "Almagro Méndez"}, {"email": "correo2@example.com", "name": "Juan", "surname": "Pérez"}, {"email": "correo3@example.com", "name": "María", "surname": "Gómez"}]'></aside-component>
             <tabs-component slot="tabs" tabs='["Principal", "Imágenes" ,"Otros" ,"Opciones"]'></tabs-component>
+            <modal-component slot="modal">
+                <p slot="content">¿Estás seguro de querer eliminarlo?</p>
+                <confirm-button-component slot="confirm" button-content="Confirmar"></confirm-button-component>
+                <close-button-component slot="close"></close-button-component>
+            </modal-component>
         </admin-component>
+
     </main>
     <footer>
     </footer>

@@ -9,10 +9,7 @@ class Team extends HTMLElement {
       // Método que genera el código HTML del componentea
       this.shadowRoot.innerHTML = `
         <style>
-        img {
-            object-fit: cover;
-            max-width: 100%;
-          }
+        
         .team {
             display: flex;
             flex-direction: column;
@@ -30,17 +27,23 @@ class Team extends HTMLElement {
             width: 100%;
             height: 100%;
           }
+          img {
+            object-fit: cover;
+            max-width: 100%;
+          }
           .team .team-title h3{
             font-family: Anime;
             font-size: 6rem;
             font-weight: 300;
-        
+            color:#fff;
+            margin:0;
           }
           .team .team-text{
             margin-bottom: 3rem;
           }
           .team .team-text p{
             font-size: 2rem;
+            color:#fff;
           }
           
         </style>

@@ -3,7 +3,6 @@ class Socials extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.render();
   }
   render() {
     // Método que genera el código HTML del componentea
@@ -21,7 +20,8 @@ class Socials extends HTMLElement {
             display: flex;
             justify-content: center;
             gap: 4rem;
-            padding:0 10%;   
+            padding:0 10%;  
+            width:80%; 
           }
           .team-content .team-item {
             align-items: center;
@@ -33,7 +33,7 @@ class Socials extends HTMLElement {
           }
          
           .team-content .team-item .team-item-image {
-            height:60%;                
+            height:100%;                
             position: relative;
             width:100%;
         }
@@ -89,8 +89,29 @@ class Socials extends HTMLElement {
           .team-content .team-item .team-social-networks .social-networks.inactive{
             display:none;
           }
+      
+          
+          .team-content .team-item .team-social-networks .social-networks-icons{
+            display:none;
+            width:100%;
+            height:100%;
+          }
+
+          .team-content .team-item .team-social-networks .social-networks-icons.active{
+            display:block;
+          }
+          .team-content .team-item .team-social-networks .social-networks-icons ul{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap:.5rem;
+            width:100%;
+            padding:0;
+            list-style:none;
+          }
           .team-content .team-item .team-social-networks .social-networks-icons ul li{
-            width:70%;
+            width:2.2rem;
+            height:2.2rem;
           }
           .team-content .team-item .team-social-networks .social-networks-icons ul li svg{
             transition: .3s linear;
@@ -101,18 +122,6 @@ class Socials extends HTMLElement {
           .team-content .team-item .team-social-networks .social-networks-icons ul li svg:hover{
             transform: scale(1.2);
             opacity: .3;
-          }
-          .team-content .team-item .team-social-networks .social-networks-icons ul{
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap:.3rem;
-          }
-          .team-content .team-item .team-social-networks .social-networks-icons{
-            display:none;
-          }
-          .team-content .team-item .team-social-networks .social-networks-icons.active{
-            display:block;
           }
          
           .team-content .team-item .team-item-title{
@@ -126,6 +135,7 @@ class Socials extends HTMLElement {
           }
           .team-content .team-item .team-item-text-subtitle p{
             font-size: 1rem;
+            color:#fff;
           }
         
           .team-content .team-item .team-social-networks button{
@@ -504,8 +514,31 @@ class Socials extends HTMLElement {
         </div>
       `;
   }
+  toggleIcons(i) {
+    const OpenIcons = this.shadowRoot.querySelectorAll(
+      ".team-social-networks .social-networks"
+    );
+    const socialMenuItems = this.shadowRoot.querySelectorAll(".team-social-networks");
+    const socialNetworkIcons = this.shadowRoot.querySelectorAll(
+      ".social-networks-icons"
+    );
+
+    console.log("toggle");
+    socialMenuItems[i].classList.toggle("active");
+    OpenIcons[i].classList.toggle("active");
+    socialNetworkIcons[i].classList.toggle("active");
+  }
   connectedCallback() {
     // Método que se ejecuta cuando el componente se agrega al DOM
+    this.render();
+    const OpenIcons = this.shadowRoot.querySelectorAll(
+      ".team-social-networks"
+    );
+    for (let i = 0; i < OpenIcons.length; i++) {
+      OpenIcons[i].addEventListener("click", () => {
+        this.toggleIcons(i);
+      });
+    }
   }
 
   disconnectedCallback() {

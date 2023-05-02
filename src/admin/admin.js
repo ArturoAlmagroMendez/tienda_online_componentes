@@ -40,6 +40,7 @@ class Admin extends HTMLElement {
                   <slot name="tabs"></slot> 
               </div>
           </form>
+          <slot name="modal"></slot>
         </div>
       `;
   }

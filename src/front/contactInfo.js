@@ -12,6 +12,7 @@ class ContactInfo extends HTMLElement {
         .flip-card-item {
           display: flex;
           flex-direction: column;
+          width:100%;
         }
         
         .flip-card-title h5 {
@@ -96,40 +97,11 @@ class ContactInfo extends HTMLElement {
     }
     
     connectedCallback() {
-        const flipButton = this.shadowRoot.getElementById('contact-btn');
-  
-            flipButton.addEventListener('click', () => {
-                const flipEvent = new CustomEvent('flip', {
-                    bubbles: true,
-                    composed: true
-                });
-    
-                flipButton.dispatchEvent(flipEvent);
-            });
+        
         }
    
   
-    disconnectedCallback() {
-      // Método que se ejecuta cuando el componente se elimina del DOM
-    }
-  
-    attributeChangedCallback(name, oldValue, newValue) {
-      // Método que se ejecuta cuando se cambia un atributo del componente
-    }
-  
-    static get observedAttributes() {
-      return ["attribute1", "attribute2"];
-    }
-  
-    set attribute1(value) {
-      // Método que se ejecuta cuando se cambia el valor del atributo attribute1
-    }
-  
-    set attribute2(value) {
-      // Método que se ejecuta cuando se cambia el valor del atributo attribute2
-    }
-  
-  
+
   }
   
   customElements.define("contact-info-component", ContactInfo);

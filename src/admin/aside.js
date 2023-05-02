@@ -83,11 +83,22 @@ class Aside extends HTMLElement {
         asideItem.querySelector('.aside-surname').innerHTML = `Apellidos: ${this.values[index].surname}`;
         });
 
+      const deleteButtons = this.shadowRoot.querySelectorAll(".delete-button");
+
+      deleteButtons.forEach((deleteButton) => {
+        deleteButton.addEventListener("click", () => {
+          this.dispatchEvent(
+            new CustomEvent("deleteButtonClicked", {
+              bubbles: true,
+              composed: true,
+            })
+          );
+        });
+      });
       
     }
     connectedCallback() {
 
-      // Método que se ejecuta cuando el componente se agrega al DOM
     }
   }
   

@@ -16,16 +16,19 @@ class MyComponent extends HTMLElement {
     `;
   }
   connectedCallback() {
+    //TODOS LOS ELEMENTOS QUE ESCUCHAN Y EL RENDER.
     // Método que se ejecuta cuando el componente se agrega al DOM
   }
 
 
   disconnectedCallback() {
     // Método que se ejecuta cuando el componente se elimina del DOM
+    //SE UTILIZA PARA ELIMINAR LOS EVENTOS QUE ESTAN SIENDO ESCUCHADOS
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     // Método que se ejecuta cuando se cambia un atributo del componente
+    
   }
 
   static get observedAttributes() {

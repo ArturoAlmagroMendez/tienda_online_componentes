@@ -101,14 +101,7 @@ class Featured extends HTMLElement {
             transform: scale(1.1);
           }
           
-          .featured .featured-content .featured-item:nth-child(n + 2)::before {
-            content: ">";
-            font-size: 4em;
-            position: absolute;
-            padding: 2rem;
-            padding-right: 29%;
-            padding-top: 6rem;
-          }
+          
           .featured .featured-content .featured-item .featured-item-image {
             width: 50%;
             height: 50%;
@@ -245,8 +238,6 @@ class Featured extends HTMLElement {
             </div>
             </div>
       `;
-    }
-    connectedCallback() {
       const featuredContainer = this.shadowRoot.querySelector('.featured .featured-item');
       const animatedHeader = this.shadowRoot.querySelector('.featured .featured-title h2');
       const animatedText = this.shadowRoot.querySelector('.featured-subtitle p');
@@ -270,6 +261,9 @@ class Featured extends HTMLElement {
       }
 
     window.addEventListener('scroll', checkHeaderAnimation);
+    }
+    connectedCallback() {
+      
     }
   
   

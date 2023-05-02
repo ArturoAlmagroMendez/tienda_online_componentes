@@ -2,7 +2,6 @@ class modalButton extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      this.render();
 
     }
     render() {
@@ -34,7 +33,6 @@ class modalButton extends HTMLElement {
                 transform: scale(1.2);
             
             }
-            
             .nav-button button.featured-header-button{
                 animation: change-color-header 1s forwards;
             }
@@ -45,7 +43,16 @@ class modalButton extends HTMLElement {
       `;
     }
     connectedCallback() {
-      // Método que se ejecuta cuando el componente se agrega al DOM
+      this.render();
+      this.shadowRoot.getElementById('header-button').addEventListener("click", () => {
+        this.dispatchEvent(
+          new CustomEvent("openModalButtonClicked", {
+            bubbles: true,
+            composed: true,
+          })
+        );
+      });
+
     }
   
   

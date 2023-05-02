@@ -10,8 +10,13 @@ import './likeButton.js';
 import './faqs.js';
 import './flipCard.js';
 import './map.js';
-import './contactInfo.js';
+//import './contactInfo.js';
 import './contactForm.js';
 import './modal.js';
+import './sliderImage.js';
+import './modalContent.js';
+import './swiper.js';
+import './swiperInfo.js';
+import './swiperForm.js';
 import './footer.js';
 
