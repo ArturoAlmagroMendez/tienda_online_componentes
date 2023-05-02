@@ -14,16 +14,24 @@ class FlipCard extends HTMLElement {
           :host{
             width:100%;
           }
+          .flip-card-container {
+            position: relative;
+            width: 60%;
+            height: 80%;
+            perspective: 1000px;
+
+          }
+          
           .flip-card {
-            
             display:flex;
             flex-direction:column;
             position: absolute;
-            height: 50%;
-            width:60%;
+            height: 100%; 
+            width: 100%;          
             text-align: center;
             transition: transform 0.6s;
             transform-style: preserve-3d;   
+            transform-origin: center;
             background-color:#fff;
           }
           .flip-card.active {
@@ -87,16 +95,17 @@ class FlipCard extends HTMLElement {
           }
           
         </style>
-         
-        <div class="flip-card">
-          <div class="flip-card-front">
-            <slot name="front"></slot>
-            <div class="flip-card-front-button">
-              ${this.getAttribute('text-button') !== null ? `<button id="contact-btn">${this.getAttribute('text-button')}</button>` : ''}
-            </div>  
-          </div>
-          <div class="flip-card-back">
-            <slot name="back"></slot>
+        <div class="flip-card-container">
+          <div class="flip-card">
+            <div class="flip-card-front">
+              <slot name="front"></slot>
+              <div class="flip-card-front-button">
+                ${this.getAttribute('text-button') !== null ? `<button id="contact-btn">${this.getAttribute('text-button')}</button>` : ''}
+              </div>  
+            </div>
+            <div class="flip-card-back">
+              <slot name="back"></slot>
+            </div>
           </div>
         </div>
       `;
