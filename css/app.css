@@ -103,4 +103,12 @@ video {
   height: 90vh;
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  
+}
+flip-card-component{
+  width:100%;
+  padding:10% 10%;
 }

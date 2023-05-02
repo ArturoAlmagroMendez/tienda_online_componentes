@@ -10,7 +10,7 @@ import './likeButton.js';
 import './faqs.js';
 import './flipCard.js';
 import './map.js';
-//import './contactInfo.js';
+import './contactInfo.js';
 import './contactForm.js';
 import './modal.js';
 import './sliderImage.js';

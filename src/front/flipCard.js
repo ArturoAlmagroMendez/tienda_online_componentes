@@ -2,7 +2,6 @@ class FlipCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    
   }
   connectedCallback() {
     
@@ -12,7 +11,11 @@ class FlipCard extends HTMLElement {
     // Método que genera el código HTML del componentea
     this.shadowRoot.innerHTML = `
         <style>
+          :host{
+            width:100%;
+          }
           .flip-card {
+            
             display:flex;
             flex-direction:column;
             position: absolute;
@@ -97,14 +100,12 @@ class FlipCard extends HTMLElement {
           </div>
         </div>
       `;
-      const flipButton = document.querySelector('.contact-btn');
 
-          flipButton.addEventListener('click' , () =>{
-              console.log("giro");
-              flipButton.closest('.flip-card-inner').classList.toggle('active');
-          });
+      const flipButton = this.shadowRoot.querySelector('#contact-btn');
 
-      
+      flipButton.addEventListener('click' , () =>{
+          flipButton.closest('.flip-card').classList.toggle('active');
+      });
   }
   
   

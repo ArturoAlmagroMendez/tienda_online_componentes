@@ -23,27 +23,24 @@
             <details-component></details-component>
             <team-component></team-component>
             <faqs-component></faqs-component>
+
             <div class="contact">
                 <map-component></map-component>
                 <flip-card-component text-button="Más detalles">
                     <contact-info-component slot="front"></contact-info-component>
                     <contact-form-component slot="back"></contact-form-component>
                 </flip-card-component>
-                <!-- <front-card-component slot="front">
-                    <flip-card-component slot="button"></flip-button-component>    
-                </front-card-component>
-                <back-card-component slot="back"></back-card-component> -->
             </div>
 
-                <modal-component>
-                    <slider-image-component slot="modal-img">
-                        <img src="/img/asta.jpg" alt="Imagen 1" slot="swiper-image">
-                    </slider-image-component>
-                    <modal-content-component slot="content">
-                        <swiper-info-component slot="swiperInfo"></swiper-info-component>
-                        <swiper-form-component slot="swiperForm"></swiper-form-component>
-                    </modal-content-component>
-                </modal-component>            
+            <modal-component>
+                <slider-image-component slot="modal-img">
+                    <img src="/img/asta.jpg" alt="Imagen 1" slot="swiper-image">
+                </slider-image-component>
+                <modal-content-component slot="content">
+                    <swiper-info-component slot="swiperInfo"></swiper-info-component>
+                    <swiper-form-component slot="swiperForm"></swiper-form-component>
+                </modal-content-component>
+            </modal-component>            
         </div>   
     </main>
     <footer>

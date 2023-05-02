@@ -2,8 +2,12 @@ class ContactInfo extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      this.render();
     }
+
+    connectedCallback(){
+        this.render();
+    }
+
     render() {
       // Método que genera el código HTML del componentea
       this.shadowRoot.innerHTML = `
@@ -36,6 +40,7 @@ class ContactInfo extends HTMLElement {
         
        
         </style>
+        
         <div class="flip-card-title">
             <h5>GET IN TOUCH</h5>
         </div>
@@ -95,15 +100,8 @@ class ContactInfo extends HTMLElement {
         </div>
        `;
     }
-    
-    connectedCallback() {
-        
-        }
-   
-  
+}
 
-  }
-  
-  customElements.define("contact-info-component", ContactInfo);
-  
+customElements.define("contact-info-component", ContactInfo);
+
   
