@@ -15,6 +15,7 @@ class Admin extends HTMLElement {
           height: 100vh;
           padding: 5% 10%;
           width: 80%;
+          position:relative;
       }
       
       .admin form {

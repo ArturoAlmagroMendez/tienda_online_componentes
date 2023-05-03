@@ -74,6 +74,7 @@ class Tabs extends HTMLElement {
         .buttons .save-button{
             height:2rem;
             width:2rem;
+            cursor:pointer;
         }
         .buttons .clean-button svg,
         .buttons .save-button svg{
@@ -124,7 +125,9 @@ class Tabs extends HTMLElement {
             </div>
 
             <!-- *****PENDIENTE MEJORAR LA FORMA EN QUE SE PASAN POR PARÁMETRO LOS TAB-CONTENT y como se asocian a su TAB-LINK correspondiente ***** --!>
-            <div class="tab-content active" id="tab1"></div>
+            <div class="tab-content active" id="tab1">
+                <form-component></form-component>
+            </div>
             <div class="tab-content" id="tab2">
                 <input type="file">
             </div>
@@ -133,8 +136,8 @@ class Tabs extends HTMLElement {
         </div>
 
       `;
-    const formComponent = document.createElement('form-component');
-    this.shadowRoot.getElementById('tab1').appendChild(formComponent);
+    // const formComponent = document.createElement('form-component');
+    // this.shadowRoot.getElementById('tab1').appendChild(formComponent);
   }
   connectedCallback() {
     this.render();
@@ -159,11 +162,23 @@ class Tabs extends HTMLElement {
         });
       });
       // Seleccionar y mostrar el contenido de la pestaña "Principal"
-      const mainTabContent = this.shadowRoot.querySelector(".tab-content#mainTab");
-      const mainTabLink = this.shadowRoot.querySelector(".tab-link a[data-target='mainTab']").classList.add("active");
-      mainTabContent.classList.add("active");
-      mainTabLink.parentElement.classList.add("active");
+
+
+    this.shadowRoot.querySelector('.clean-button').addEventListener("click", () => {
+        this.dispatchEvent(
+          new CustomEvent("cleanButtonClicked", {
+            bubbles: true,
+            composed: true,
+          })
+        );
+      });
+      const saveButton = this.shadowRoot.querySelector(".save-button");
+        saveButton.addEventListener('click' , () =>{
+          alert("Se han guardado los datos del formulario correctamente.");
+        });
+
   }
+
 }
 
 customElements.define("tabs-component", Tabs);

@@ -2,12 +2,31 @@ class Form extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      this.render();
     }
+    connectedCallback() {
+      this.render();
+
+      // Método que se ejecuta cuando el componente se agrega al DOM
+      document.addEventListener("cleanButtonClicked", () => {
+        const formElement = this.shadowRoot.getElementById("my-form");
+        formElement.reset();
+        alert("Se ha limpiado el formulario");
+      });
+      const saveButton = this.shadowRoot.querySelector(".save-button");
+        saveButton.addEventListener('click' , () =>{
+          alert("Se han guardado los datos del formulario correctamente.");
+        });
+    }
+
+    
     render() {
       // Método que genera el código HTML del componentea
       this.shadowRoot.innerHTML = `
         <style>
+        #my-form {
+          width:100%;
+          height:100%;
+        }
         .form-data{
             display:flex;
             justify-content: space-between;
@@ -22,7 +41,7 @@ class Form extends HTMLElement {
             background-color: hsl(194, 57%, 58%);
             font-family: 'Poppins' , sans-serif;
             font-size: 1.6rem;
-            padding:1.5rem 0;
+            padding:.5rem 0;
             width:100%;
         }
         .form-data .admin-form-username,
@@ -48,31 +67,31 @@ class Form extends HTMLElement {
             font-size: 1.2rem;
         }
         </style>
-        <div class="form-data">
-            <div class="admin-form-username">
-                <label>Usuario</label>
-                <input type="text" name="username" data-validate="only-letters">
-            </div>
-            <div class="admin-form-email">
-                <label>Email</label>
-                <input type="email" name="email" data-validate="email">
-            </div>
-        </div>
-        <div class="form-password">
-            <div class="admin-form-password">
-                <label>Contraseña</label>
-                <input type="password" name="password">
-            </div>
-            <div class="admin-form-password-check">
-                <label>Repetir Contraseña</label>
-                <input type="password" name="password">
-            </div>
-        </div>
+        <form id="my-form">
+          <div class="form-data">
+              <div class="admin-form-username">
+                  <label>Usuario</label>
+                  <input type="text" name="username" data-validate="only-letters">
+              </div>
+              <div class="admin-form-email">
+                  <label>Email</label>
+                  <input type="email" name="email" data-validate="email">
+              </div>
+          </div>
+          <div class="form-password">
+              <div class="admin-form-password">
+                  <label>Contraseña</label>
+                  <input type="password" name="password">
+              </div>
+              <div class="admin-form-password-check">
+                  <label>Repetir Contraseña</label>
+                  <input type="password" name="password">
+              </div>
+          </div>
+        </form>
       `;
     }
-    connectedCallback() {
-      // Método que se ejecuta cuando el componente se agrega al DOM
-    }
+    
   
   
     disconnectedCallback() {
