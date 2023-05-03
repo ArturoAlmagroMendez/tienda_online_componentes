@@ -12,10 +12,7 @@ class Form extends HTMLElement {
         formElement.reset();
         alert("Se ha limpiado el formulario");
       });
-      const saveButton = this.shadowRoot.querySelector(".save-button");
-        saveButton.addEventListener('click' , () =>{
-          alert("Se han guardado los datos del formulario correctamente.");
-        });
+      
     }
 
     
