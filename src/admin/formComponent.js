@@ -39,11 +39,44 @@ class Form extends HTMLElement {
     }
   
     render() {
-      // Método que genera el código HTML del componente
       const tabsJSON = this.getAttribute("tabs");
-      const tabs = tabsJSON ? JSON.parse(tabsJSON) : ["Tab 1", "Tab 2", "Tab 3", "Tab 4"];
+      const defaultTabs = [
+        {
+          title: "Principal",
+          content: `
+            <div class="form-data">
+              <div class="admin-form-username">
+                <label>Nombre de usuario:</label>
+                <input type="text" name="username1" required />
+              </div>
+              <div class="admin-form-email">
+                <label>Correo electrónico:</label>
+                <input type="email" name="email1" required />
+              </div>
+            </div>
+            <div class="form-password">
+              <div class="admin-form-password">
+                <label>Contraseña:</label>
+                <input type="password" name="password1" required />
+              </div>
+              <div class="admin-form-password-check">
+                <label>Confirmar contraseña:</label>
+                <input type="password" name="passwordCheck1" required />
+              </div>
+            </div>
+          `,
+        },
+        {
+          title: "Imágenes",
+          content: `
+            <label for="file-input">Subir archivo:</label>
+            <input type="file" id="file-input" name="file-input">
+          `,
+        },
+      ];
       this.shadowRoot.innerHTML = `
         <style>
+        
           .admin-content-login {
             display: flex;
             flex-direction: column;
@@ -54,11 +87,11 @@ class Form extends HTMLElement {
           }
           .tabs-menu {
             align-items: center;
+            width:100%;
             background-color: hsl(0, 0%, 100%);
             display: flex;
             height: 10%;
             justify-content: space-between;
-            padding: 0 .5rem;
           }
           .tabs-menu .tabs {
             color: #000;
@@ -168,15 +201,16 @@ class Form extends HTMLElement {
         <div class="tabs-menu">
           <div class="tabs">
             <ul>
-              ${tabs
-                .map(
-                  (tab, index) => `
-                    <li>
-                      <div class="tab-link${index === 0 ? " active" : ""}">
-                        <a class="tab${index === 0 ? " active" : ""}" data-target="tab${index + 1}">${tab}</a>
-                      </div>
-                    </li>`
-                ).join("")}
+            ${defaultTabs
+              .map(
+                (tab, index) => `
+                  <li${index === 0 ? ' class="active"' : ""}>
+                    <a href="#" data-target="tab${index + 1}" class="tab-link${
+                  index === 0 ? " active" : ""
+                }">${tab.title}</a>
+                  </li>`
+              )
+              .join("")}
             </ul>
           </div>
           <div class="buttons">
@@ -195,33 +229,14 @@ class Form extends HTMLElement {
         </div>
       </div>
       <form id="my-form">
-        ${tabs
-          .map(
-            (tab, index) => `
-              <div class="tab-content${index === 0 ? " active" : ""}" id="tab${index + 1}">
-                <div class="form-data">
-                  <div class="admin-form-username">
-                    <label>Nombre de usuario:</label>
-                    <input type="text" name="username${index + 1}" required />
-                  </div>
-                  <div class="admin-form-email">
-                    <label>Correo electrónico:</label>
-                    <input type="email" name="email${index + 1}" required />
-                  </div>
-                </div>
-                <div class="form-password">
-                  <div class="admin-form-password">
-                    <label>Contraseña:</label>
-                    <input type="password" name="password${index + 1}" required />
-                  </div>
-                  <div class="admin-form-password-check">
-                    <label>Confirmar contraseña:</label>
-                    <input type="password" name="passwordCheck${index + 1}" required />
-                  </div>
-                </div>
-              </div>`
-          )
-          .join("")}
+      ${defaultTabs
+        .map(
+          (tabContent, index) => `
+            <div class="tab-content${index === 0 ? " active" : ""}" id="tab${index + 1}">
+              ${tabContent.content}
+            </div>`
+        )
+        .join("")}
       </form>
     </div>`;
     }
