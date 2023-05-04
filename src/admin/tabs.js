@@ -126,7 +126,6 @@ class Tabs extends HTMLElement {
 
             <!-- *****PENDIENTE MEJORAR LA FORMA EN QUE SE PASAN POR PARÁMETRO LOS TAB-CONTENT y como se asocian a su TAB-LINK correspondiente ***** --!>
             <div class="tab-content active" id="tab1">
-                <form-component></form-component>
             </div>
             <div class="tab-content" id="tab2">
                 <input type="file">
