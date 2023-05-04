@@ -33,14 +33,12 @@ class Admin extends HTMLElement {
 
         </style>
         <div class="admin">
-          <form action="">
               <slot name="header"></slot>
               <slot name="dropdown"></slot>  
               <div class="admin-content">
                   <slot name="aside"></slot>
-                  <slot name="tabs"></slot> 
+                  <slot name="form"></slot> 
               </div>
-          </form>
           <slot name="modal"></slot>
         </div>
       `;

@@ -11,13 +11,10 @@ class Form extends HTMLElement {
         const formElement = this.shadowRoot.getElementById("my-form");
         formElement.reset();
         alert("Se ha limpiado el formulario");
-      });
-      
+      }); 
     }
-
-    
     render() {
-      // Método que genera el código HTML del componentea
+      // Método que genera el código HTML del componente
       this.shadowRoot.innerHTML = `
         <style>
         #my-form {
