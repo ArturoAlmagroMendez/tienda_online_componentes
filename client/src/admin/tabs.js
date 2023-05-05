@@ -83,15 +83,11 @@ class Tabs extends HTMLElement {
         }
         .tab-content{
             display: none;
-            gap:2rem;
             width:100%;
         }
         .tab-content.active{
             display:block;
         }
-        
-        
-        
         </style>
         <div class="admin-content-login"> 
             <div class="tabs-menu">

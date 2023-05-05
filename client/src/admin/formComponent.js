@@ -1,49 +1,51 @@
 class Form extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open" });
-    }
-  
-    connectedCallback() {
-      this.render();
-  
-      const tabs = this.shadowRoot.querySelectorAll(".tabs ul li a");
-      const tabsContent = this.shadowRoot.querySelectorAll(".tab-content");
-      tabs.forEach((item) => {
-        item.addEventListener("click", () => {
-          tabsContent.forEach((tabContent) => {
-            tabContent.classList.remove("active");
-          });
-          tabs.forEach((tab) => {
-            tab.classList.remove("active");
-            tab.parentElement.classList.remove("active");
-          });
-          const target = item.dataset.target;
-          const targetElement = this.shadowRoot.getElementById(target);
-          targetElement.classList.add("active");
-          item.classList.add("active");
-          item.parentElement.classList.add("active");
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+
+  connectedCallback() {
+    this.render();
+
+    const tabs = this.shadowRoot.querySelectorAll(".tabs ul li a");
+    const tabsContent = this.shadowRoot.querySelectorAll(".tab-content");
+    tabs.forEach((item) => {
+      item.addEventListener("click", () => {
+        tabsContent.forEach((tabContent) => {
+          tabContent.classList.remove("active");
         });
+        tabs.forEach((tab) => {
+          tab.classList.remove("active");
+          tab.parentElement.classList.remove("active");
+        });
+        const target = item.dataset.target;
+        const targetElement = this.shadowRoot.getElementById(target);
+        targetElement.classList.add("active");
+        item.classList.add("active");
+        item.parentElement.classList.add("active");
       });
-  
-      this.shadowRoot.querySelector('.clean-button').addEventListener("click", () => {
+    });
+
+    this.shadowRoot
+      .querySelector(".clean-button")
+      .addEventListener("click", () => {
         const formElement = this.shadowRoot.getElementById("my-form");
         formElement.reset();
         alert("Se ha limpiado el formulario");
       });
-  
-      const saveButton = this.shadowRoot.querySelector(".save-button");
-      saveButton.addEventListener('click', () => {
-        alert("Se han guardado los datos del formulario correctamente.");
-      });
-    }
-  
-    render() {
-      const tabsJSON = this.getAttribute("tabs");
-      const defaultTabs = [
-        {
-          title: "Principal",
-          content: `
+
+    const saveButton = this.shadowRoot.querySelector(".save-button");
+    saveButton.addEventListener("click", () => {
+      alert("Se han guardado los datos del formulario correctamente.");
+    });
+  }
+
+  render() {
+    const tabsJSON = this.getAttribute("tabs");
+    const defaultTabs = [
+      {
+        title: "Principal",
+        content: `
             <div class="form-data">
               <div class="admin-form-username">
                 <label>Nombre de usuario:</label>
@@ -65,25 +67,24 @@ class Form extends HTMLElement {
               </div>
             </div>
           `,
-        },
-        {
-          title: "Imágenes",
-          content: `
+      },
+      {
+        title: "Imágenes",
+        content: `
             <label for="file-input">Subir archivo:</label>
             <input type="file" id="file-input" name="file-input">
           `,
-        },
-      ];
-      this.shadowRoot.innerHTML = `
+      },
+    ];
+    this.shadowRoot.innerHTML = `
         <style>
-        
+       
           .admin-content-login {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
             height: 100%;
-            padding: .5rem 0;
             width: 100%;
+            border:6px solid red;
           }
           .tabs-menu {
             align-items: center;
@@ -135,7 +136,6 @@ class Form extends HTMLElement {
           .tabs-menu .buttons {
             display: flex;
             gap: 1rem;
-            justify-content: end;
             padding: .5rem 1rem;
           }
           .buttons .clean-button,
@@ -145,57 +145,68 @@ class Form extends HTMLElement {
             cursor: pointer;
           }
           .buttons .clean-button svg,
-        .buttons .save-button svg {
-          height: 100%;
-          width: 100%;
-        }
-        .tab-content {
-          display: none;
-          gap: 2rem;
-          width: 100%;
-        }
-        .tab-content.active {
-          display: block;
-        }
-        #my-form {
-          width: 100%;
-          height: 100%;
-        }
-        .form-data {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 2rem;
-        }
-        .form-data label,
-        .form-password label {
-          font-family: 'Poppins', sans-serif;
-          font-size: 1.5rem;
-        }
-        input {
-          background-color: hsl(194, 57%, 58%);
-          font-family: 'Poppins', sans-serif;
-          font-size: 1.6rem;
-          padding: .5rem 0;
-          width: 100%;
-        }
-        .form-data .admin-form-username,
-        .form-data .admin-form-email {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          width: 45%;
-        }
-        .form-password {
-          display: flex;
-          justify-content: space-between;
-        }
-        .form-password .admin-form-password,
-        .form-password .admin-form-password-check {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          width: 45%;
-        }
+          .buttons .save-button svg {
+            height: 100%;
+            width: 100%;
+          }
+          .buttons .clean-button svg:hover,
+          .buttons .save-button svg:hover{
+            fill:blue;
+          }
+          .tab-content {
+            display: none;
+            gap: 2rem;
+            width: 100%;
+          }
+          .tab-content.active {
+            display: block;
+          }
+          #my-form {
+            width: 100%;
+            height: 100%;
+            display:flex;
+            flex-direction: column;
+            border:2px solid black;
+          }
+          .form-data {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5%;
+
+          }
+          .form-data label,
+          .form-password label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+          }
+          input {
+            background-color: hsl(194, 57%, 58%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            padding: .5rem 0;
+            width: 100%;
+          }
+          .form-data .admin-form-username,
+          .form-data .admin-form-email {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            width: 45%;
+
+          }
+          .form-password {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5%;
+
+          }
+          .form-password .admin-form-password,
+          .form-password .admin-form-password-check {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 45%;
+          }
       </style>
       <div class="admin-content-login">
         <div class="tabs-menu">
@@ -222,25 +233,27 @@ class Form extends HTMLElement {
               </svg>
             </div>
             <div class="save-button">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="" height="" viewBox="0 0 17 17" version="1.1">
-              <path d="M14.164 0h-12.664c-0.827 0-1.5 0.673-1.5 1.5v13.5c0 0.827 0.673 1.5 1.5 1.5h12.664c0.827 0 1.5-0.673 1.5-1.5v-13.5c0-0.827-0.673-1.5-1.5-1.5zM7 14.242l-5.121-5.121 1.414-1.414 3.707 3.707 6.293-6.293 1.414 1.414-7.707 7.707z"></path>
-            </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="" height="" viewBox="0 0 17 17" version="1.1">
+                <path d="M14.164 0h-12.664c-0.827 0-1.5 0.673-1.5 1.5v13.5c0 0.827 0.673 1.5 1.5 1.5h12.664c0.827 0 1.5-0.673 1.5-1.5v-13.5c0-0.827-0.673-1.5-1.5-1.5zM7 14.242l-5.121-5.121 1.414-1.414 3.707 3.707 6.293-6.293 1.414 1.414-7.707 7.707z"></path>
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-      <form id="my-form">
-      ${defaultTabs
-        .map(
-          (tabContent, index) => `
-            <div class="tab-content${index === 0 ? " active" : ""}" id="tab${index + 1}">
-              ${tabContent.content}
-            </div>`
-        )
-        .join("")}
-      </form>
-    </div>`;
-    }
+        <form id="my-form">
+        ${defaultTabs
+          .map(
+            (tabContent, index) => `
+              <div class="tab-content${index === 0 ? " active" : ""}" id="tab${
+              index + 1
+            }">
+                ${tabContent.content}
+              </div>`
+          )
+          .join("")}
+        </form>
+        </div>
+      </div>`;
   }
-  
-  customElements.define("form-components", Form);
-  
+}
+
+customElements.define("form-component", Form);

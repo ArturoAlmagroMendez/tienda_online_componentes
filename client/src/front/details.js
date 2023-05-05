@@ -103,7 +103,7 @@ class Details extends HTMLElement {
         <div id="details" class="details">
                 <div class="details-background-image">
                     <picture>
-                        <img src="/img/cielin.png" alt="">
+                        <img src="./img/cielin.png" alt="">
                     </picture>
                 </div>
                 <div class="details-column">

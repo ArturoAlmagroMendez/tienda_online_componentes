@@ -18,6 +18,8 @@ class Table extends HTMLElement {
         flex-direction: column;
         gap: .5rem;
         width: 100%;
+        height:100%;
+        border:2px solid green;
       }
       
       .table-item {
@@ -49,6 +51,10 @@ class Table extends HTMLElement {
       .delete-button svg {
         height: 100%;
         width: 100%;
+      }
+      .edit-button svg:hover,
+      .delete-button svg:hover{
+        fill:#fff;
       }
       
       .table-item-header .delete-button {

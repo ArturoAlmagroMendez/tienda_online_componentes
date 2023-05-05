@@ -124,7 +124,7 @@ class Featured extends HTMLElement {
         <div id="featured" class="featured">
                 <div class="featured-background-image">
                     <picture>
-                        <img src="/img/rojonegro.webp" alt="">
+                        <img src="./img/rojonegro.webp" alt="">
                     </picture>
                 </div>
                 <div class="featured-items">

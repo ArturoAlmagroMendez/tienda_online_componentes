@@ -38,11 +38,16 @@ main {
 }
 /*********** MODAL****************/
 /*********/
+
 table-component {
   width: 40%;
+  height:100%;
 }
 tabs-component {
   width: 60%;
+}
+form-component{
+  height: 50%;
 }
 
 h1,

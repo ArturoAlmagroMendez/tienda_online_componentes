@@ -20,16 +20,14 @@ class Form extends HTMLElement {
         #my-form {
           width:100%;
           height:100%;
-        }
-        .form-data{
-            display:flex;
-            justify-content: space-between;
-            margin-bottom: 2rem;
+          display:flex;
+          flex-direction: column;
         }
         .form-data label,
         .form-password label{
             font-family: 'Poppins' , sans-serif;
             font-size:1.5rem;
+            width:100%;
         }
         input{
             background-color: hsl(194, 57%, 58%);
@@ -61,11 +59,6 @@ class Form extends HTMLElement {
             font-size: 1.2rem;
         }
         </style>
-
-
-
-
-        
         <form id="my-form">
           <div class="form-data">
               <div class="admin-form-username">

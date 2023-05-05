@@ -11,7 +11,9 @@ class Admin extends HTMLElement {
         .admin {
           background-color: hsl(249, 100%, 38%);
           color: #fff;
-          gap: 1rem;
+          display:flex;
+          flex-direction:column;
+          gap: 2rem;
           height: 100vh;
           padding: 5% 10%;
           width: 80%;
@@ -29,6 +31,8 @@ class Admin extends HTMLElement {
           gap: 2rem;
           justify-content: space-between;
           width: 100%;
+          height:100%;
+          border:1px solid black;
       }
 
         </style>
@@ -36,7 +40,7 @@ class Admin extends HTMLElement {
               <slot name="header"></slot>
               <slot name="dropdown"></slot>  
               <div class="admin-content">
-                  <slot name="aside"></slot>
+                  <slot name="table"></slot>
                   <slot name="form"></slot> 
               </div>
           <slot name="modal"></slot>
