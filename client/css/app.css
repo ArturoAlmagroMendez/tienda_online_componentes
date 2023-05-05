@@ -41,13 +41,13 @@ main {
 
 table-component {
   width: 40%;
-  height:100%;
+  height:80%;
 }
 tabs-component {
   width: 60%;
 }
 form-component{
-  height: 50%;
+  height: 80%;
 }
 
 h1,

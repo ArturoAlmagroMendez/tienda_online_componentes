@@ -47,23 +47,35 @@ class Form extends HTMLElement {
         title: "Principal",
         content: `
             <div class="form-data">
-              <div class="admin-form-username">
+              <div class="form-element">
                 <label>Nombre de usuario:</label>
                 <input type="text" name="username1" required />
               </div>
-              <div class="admin-form-email">
-                <label>Correo electrónico:</label>
-                <input type="email" name="email1" required />
+              <div class="form-element">
+                <div class="form-element-label">
+                  <label>Correo electrónico:</label>
+                </div>
+                <div class="form-element-input">
+                  <input type="email" name="email1" required />
+                </div>
               </div>
             </div>
-            <div class="form-password">
-              <div class="admin-form-password">
-                <label>Contraseña:</label>
-                <input type="password" name="password1" required />
+            <div class="form-data">
+              <div class="form-element">
+                <div class="form-element-label">
+                  <label>Contraseña:</label>
+                </div>
+                <div class="form-element-input">
+                  <input type="password" name="password1" required />
+                </div>
               </div>
-              <div class="admin-form-password-check">
-                <label>Confirmar contraseña:</label>
-                <input type="password" name="passwordCheck1" required />
+              <div class="form-element">
+                <div class="form-element-label">
+                  <label>Confirmar contraseña:</label>
+                </div>
+                <div class="form-element-input">
+                  <input type="password" name="passwordCheck1" required />
+                </div>
               </div>
             </div>
           `,
@@ -71,8 +83,14 @@ class Form extends HTMLElement {
       {
         title: "Imágenes",
         content: `
+        <div class="form-element">
+          <div class="form-element-label">
             <label for="file-input">Subir archivo:</label>
+          </div>
+          <div class="form-element-input">
             <input type="file" id="file-input" name="file-input">
+          </div>
+        </div>
           `,
       },
     ];
@@ -168,6 +186,10 @@ class Form extends HTMLElement {
             flex-direction: column;
             border:2px solid black;
           }
+          .form-element-label,
+          .form-element-input {
+            width: 100%;
+          }
           .form-data {
             display: flex;
             justify-content: space-between;
@@ -175,7 +197,7 @@ class Form extends HTMLElement {
 
           }
           .form-data label,
-          .form-password label {
+          .form-data label {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
           }
@@ -183,25 +205,22 @@ class Form extends HTMLElement {
             background-color: hsl(194, 57%, 58%);
             font-family: 'Poppins', sans-serif;
             font-size: 1.6rem;
-            padding: .5rem 0;
             width: 100%;
           }
-          .form-data .admin-form-username,
-          .form-data .admin-form-email {
+          .form-data .form-element{
             display: flex;
             flex-direction: column;
             gap: 0.3rem;
             width: 45%;
 
           }
-          .form-password {
+          .form-data {
             display: flex;
             justify-content: space-between;
-            padding: 0 5%;
 
           }
-          .form-password .admin-form-password,
-          .form-password .admin-form-password-check {
+          
+          .form-data .form-element{
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
