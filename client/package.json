@@ -16,7 +16,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --open"
+    "start": "webpack serve --mode development --open",
+    "watch-admin" : "webpack --watch --config admin/webpack.config.js",
+    "watch-front" : "webpack --watch --config front/webpack.config.js"
   },
   "keywords": [],
   "author": "",

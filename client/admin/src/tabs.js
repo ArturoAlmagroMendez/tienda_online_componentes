@@ -171,9 +171,7 @@ class Tabs extends HTMLElement {
         saveButton.addEventListener('click' , () =>{
           alert("Se han guardado los datos del formulario correctamente.");
         });
-
   }
-
 }
 
 customElements.define("tabs-component", Tabs);

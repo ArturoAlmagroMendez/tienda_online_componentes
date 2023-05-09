@@ -41,7 +41,6 @@ class Form extends HTMLElement {
   }
 
   render() {
-    const tabsJSON = this.getAttribute("tabs");
     const defaultTabs = [
       {
         title: "Principal",
@@ -83,12 +82,14 @@ class Form extends HTMLElement {
       {
         title: "Imágenes",
         content: `
-        <div class="form-element">
-          <div class="form-element-label">
-            <label for="file-input">Subir archivo:</label>
-          </div>
-          <div class="form-element-input">
-            <input type="file" id="file-input" name="file-input">
+        <div class="form-data">
+          <div class="form-element">
+            <div class="form-element-label">
+              <label for="file-input">Subir archivo:</label>
+            </div>
+            <div class="form-element-input">
+              <input type="file" id="file-input" name="file-input">
+            </div>
           </div>
         </div>
           `,
@@ -102,7 +103,8 @@ class Form extends HTMLElement {
             flex-direction: column;
             height: 100%;
             width: 100%;
-            border:6px solid red;
+            gap:3rem;
+
           }
           .tabs-menu {
             align-items: center;
@@ -124,6 +126,7 @@ class Form extends HTMLElement {
             height: 100%;
             list-style: none;
             margin: 0;
+            padding: 0;
           }
           .tabs-menu .tabs ul li {
             align-items: center;
@@ -173,7 +176,6 @@ class Form extends HTMLElement {
           }
           .tab-content {
             display: none;
-            gap: 2rem;
             width: 100%;
           }
           .tab-content.active {
@@ -184,7 +186,6 @@ class Form extends HTMLElement {
             height: 100%;
             display:flex;
             flex-direction: column;
-            border:2px solid black;
           }
           .form-element-label,
           .form-element-input {
@@ -194,6 +195,7 @@ class Form extends HTMLElement {
             display: flex;
             justify-content: space-between;
             padding: 0 5%;
+            width:90%;
 
           }
           .form-data label,
@@ -206,26 +208,20 @@ class Form extends HTMLElement {
             font-family: 'Poppins', sans-serif;
             font-size: 1.6rem;
             width: 100%;
-          }
+          }        
           .form-data .form-element{
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
-            width: 45%;
-
-          }
-          .form-data {
-            display: flex;
-            justify-content: space-between;
-
-          }
-          
-          .form-data .form-element{
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            gap: 1rem;
             width: 45%;
           }
+          .form-element-input{
+            width:100%;
+          }
+          form-element-label{
+            width:100%;
+          }
+         
       </style>
       <div class="admin-content-login">
         <div class="tabs-menu">

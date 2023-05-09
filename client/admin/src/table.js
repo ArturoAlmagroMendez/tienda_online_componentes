@@ -19,7 +19,6 @@ class Table extends HTMLElement {
         gap: .5rem;
         width: 100%;
         height:100%;
-        border:2px solid green;
       }
       
       .table-item {

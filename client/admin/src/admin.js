@@ -28,11 +28,9 @@ class Admin extends HTMLElement {
       }
       .admin-content {
           display: flex;
-          gap: 2rem;
-          justify-content: space-between;
           width: 100%;
-          height:100%;
-          border:1px solid black;
+            justify-content: space-between;
+          height:100%;          
       }
 
         </style>
