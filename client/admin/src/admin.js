@@ -9,7 +9,7 @@ class Admin extends HTMLElement {
     this.shadowRoot.innerHTML = `
         <style>
         .admin {
-          background-color: hsl(249, 100%, 38%);
+          background-image: linear-gradient(to right top, #0066ff, #0259f5, #074bea, #0e3ddf, #152ed3);
           color: #fff;
           display:flex;
           flex-direction:column;

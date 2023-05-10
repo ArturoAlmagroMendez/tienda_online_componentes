@@ -109,7 +109,7 @@ class Form extends HTMLElement {
           .tabs-menu {
             align-items: center;
             width:100%;
-            background-color: hsl(0, 0%, 100%);
+            background-image: linear-gradient(to right top, #00bdff, #4ac8fd, #6ed2fc, #8bdcfb, #a7e6fb);
             display: flex;
             height: 10%;
             justify-content: space-between;
@@ -138,6 +138,8 @@ class Form extends HTMLElement {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
             text-decoration: none;
+
+          padding:0 2rem;
           }
           .tab-link {
             align-items: center;
@@ -146,7 +148,8 @@ class Form extends HTMLElement {
             height: 100%;
           }
           .tab-link.active {
-            background-color: rgb(36, 92, 177);
+            background-color: #fff;
+            border:2px solid black;
           }
           .tab-link span {
             font-family: 'Poppins', sans-serif;
@@ -196,24 +199,25 @@ class Form extends HTMLElement {
             justify-content: space-between;
             padding: 0 5%;
             width:90%;
-
           }
-          .form-data label,
           .form-data label {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
           input {
-            background-color: hsl(194, 57%, 58%);
+            background-color:#00a0ff;
             font-family: 'Poppins', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             width: 100%;
+            border:none;
+            border-bottom: 2px solid #fff;
           }        
           .form-data .form-element{
             display: flex;
             flex-direction: column;
             gap: 1rem;
             width: 45%;
+            margin-bottom:2rem;
           }
           .form-element-input{
             width:100%;

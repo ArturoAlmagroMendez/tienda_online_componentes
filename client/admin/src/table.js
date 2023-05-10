@@ -19,6 +19,7 @@ class Table extends HTMLElement {
         gap: .5rem;
         width: 100%;
         height:100%;
+        
       }
       
       .table-item {
@@ -28,14 +29,14 @@ class Table extends HTMLElement {
       }
       
       .table-item-header {
-        background-color: hsl(194, 57%, 58%);
+        background-image: linear-gradient(to right top, #00bdff, #4ac8fd, #6ed2fc, #8bdcfb, #a7e6fb);
         display: flex;
         justify-content: flex-end;
         padding: .5rem .3rem;
       }
       
       .table-item-content {
-        background-color: hsl(214, 58%, 52%);
+        background-color:#000000;
         padding: 1rem;
       }
       
@@ -53,7 +54,7 @@ class Table extends HTMLElement {
       }
       .edit-button svg:hover,
       .delete-button svg:hover{
-        fill:#fff;
+        fill:hsl(214, 58%, 52%);
       }
       
       .table-item-header .delete-button {

@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-
+// EVENT DRIVER MIRAR ****** 
 module.exports = function(sequelize) {
   const Company = sequelize.define('Company', {
     id: {

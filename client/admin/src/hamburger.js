@@ -17,7 +17,7 @@ class Hamburger extends HTMLElement {
         .line{
             width:6rem;
             height: .6rem;
-            background-color: rgb(255, 255, 255);
+            background-image: linear-gradient(to right top, #00bdff, #4ac8fd, #6ed2fc, #8bdcfb, #a7e6fb);
         }
         </style>
         <div class="hamburger">

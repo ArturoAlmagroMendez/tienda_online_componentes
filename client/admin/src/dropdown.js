@@ -9,7 +9,7 @@ class DropDown extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <style>
         .admin-bar {
-            background-color: hsl(0, 0%, 100%);
+            background-image: linear-gradient(to right top, #00bdff, #4ac8fd, #6ed2fc, #8bdcfb, #a7e6fb);
             display: flex;
             gap: 1rem;
             height: 3rem;
